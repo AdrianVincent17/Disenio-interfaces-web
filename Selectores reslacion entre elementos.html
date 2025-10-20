@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de selectores basicos CSS</title>
+    <style>
+      
+        /* DESCENDIENTE*/
+        div P{
+            color: blue;
+        }
+        /* HIJO DIRECTO */
+        div > p{
+          
+            font-weight: bold;
+        }
+        /* HERMANO ADYACENTE*/
+        h2 + p{
+            color:red;
+            
+        }
+         /* HERMANOS GENERALESE*/
+        h3 ~ p{
+            background-color: lightyellow;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Ejemplo de selectores de relacion
+    </h1>
+    <h2>Selector descendiente e hijo directo</h2>
+    <div>
+        <p>Este parrafo es hijo directo de DIV (azul y en negrita)</p>
+        <section>
+            <p>Este parrafo es desdcendiente de DIV pero no hijo directo (azul, sin negrita)</p>
+        </section>
+    </div>
+    <h2>Selector hermano adyacente</h2>
+    <p> Este parrafo viene justo despues de un H2 → rojo</p>
+    <p> Este parrafo NO es adyacente → estilo normal</p>
+    <h3>Selector hermanos generales</h3>
+    <p>todos los parrafos despues de H3 → fondo amarillo</p>
+    <p>Tambien este parrafo</p>
+    
+</body>
+</html>

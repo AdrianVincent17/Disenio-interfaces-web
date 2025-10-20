@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos y estados</title>
+</head>
+
+<body>
+    <style>
+        /*  SELECTOR DE ATRIBUTO */
+        input[type="text"] {
+            border: 2px solid blue;
+        }
+
+        /*PSEUDO-CLASE*/
+        a:hover {
+            color: red;
+        }
+        /*PSEUDO-ELEMENTOS*/
+        P::first-line{
+            font-weight: bold;
+        }
+        p::before{
+            content: "👉 ";
+            color: green;
+        }
+    </style>
+
+    <h1>Ejemplo de selectores avanzados</h1>
+
+    <h2>Selector de atributos</h2>
+
+    <form >
+        <input type="text" placeholder="Este input tiene borde azul">
+        <input type="password" placeholder="Este no cambia">
+
+    </form>
+
+    <h2>Pseudo-clase</h2>
+    <p>Enlace con <code>:hover</code>: <a href="#">Pasa el raton por aqui</a></p>
+
+    <h2>Pseudo-elementos</h2>
+    <p>Este parrafo aplica <code>::first-line</code> y <code>::before</code>.
+    La primera linea aparece en negrita y delante del parrafo se añade un icono.</p>
+
+</body>
+
+</html>
