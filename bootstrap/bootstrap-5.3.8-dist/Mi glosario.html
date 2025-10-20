@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi glosario</title>
+    <style>
+        /* CSS Básico para la funcionalidad y legibilidad */
+        
+        /* 1. Mejora la experiencia de "One Page" */
+        html {
+            scroll-behavior: smooth; /* ¡La magia para el scroll suave! */
+            scroll-padding-top: 80px; /* Evita que el nav tape el título al saltar */
+        }
+        
+        body {
+            font-family: Arial, Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* 2. Estilos del Menú de Navegación */
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            text-align: center;
+            
+            /* Fija el menú arriba al hacer scroll */
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* 3. Estilos del Contenido y Glosario */
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+            color: #222;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        section {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            color: #0056b3;
+        }
+
+        /* Estilos del Glosario (dl, dt, dd) */
+        dt {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin-top: 1.5rem;
+        }
+        dd {
+            margin-left: 20px;
+            margin-bottom: 1rem;
+            /* Estilo "chuleta": fondo gris claro para el código */
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+        }
+        /* Para mostrar el código en la chuleta */
+        code {
+            font-family: monospace;
+            background-color: #e0e0e0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Glosario</h1>
+
+    <nav>
+        <a href="#html">Etiquetas HTML</a>
+        <a href="#bootstrap">Bootstrap 5</a>
+        <a href="#css">Conceptos CSS</a>
+    </nav>
+
+    <main>
+
+        <section id="html">
+            <h2>Etiquetas HTML Semánticas</h2>
+            <p>Son etiquetas que describen su significado o propósito al navegador y al desarrollador.</p>
+
+            <dl>
+                <dt>&lt;section&gt;</dt>
+                <dd>Define una sección temática en un documento. Es un agrupador genérico con sentido.</dd>
+
+                <dt>&lt;article&gt;</dt>
+                <dd>Define contenido independiente y autocontenido (ej. un post de blog, un producto).</dd>
+                
+                <dt>&lt;nav&gt;</dt>
+                <dd>Define un bloque de enlaces de navegación (menús).</dd>
+                
+                <dt>&lt;aside&gt;</dt>
+                <dd>Define contenido relacionado pero separado del principal (ej. una barra lateral).</dd>
+            </dl>
+        </section>
+
+        <section id="bootstrap">
+            <h2>Chuleta de Bootstrap 5</h2>
+            <p>Conceptos clave del framework de CSS.</p>
+
+            <dl>
+                <dt>Sistema de Rejilla (Grid)</dt>
+                <dd>Se basa en 12 columnas. Se usa con <code>.container</code>, <code>.row</code>, y <code>.col-*</code> (ej. <code>.col-md-6</code>).</dd>
+
+                <dt><code>.container</code> vs <code>.container-fluid</code></dt>
+                <dd>
+                    <code>.container</code>: Tiene un ancho máximo (<code>max-width</code>) que cambia según el tamaño de pantalla. Deja márgenes a los lados.<br>
+                    <code>.container-fluid</code>: Ocupa siempre el 100% del ancho (<code>width: 100%</code>).
+                </dd>
+
+                <dt>Clases de Espaciado (Spacing)</dt>
+                <dd>
+                    Permiten añadir <code>margin</code> o <code>padding</code> rápidamente.<br>
+                    Formato: <code>{propiedad}{lado}-{tamaño}</code><br>
+                    - Propiedad: <code>m</code> (margin), <code>p</code> (padding).<br>
+                    - Lado: <code>t</code> (top), <code>b</code> (bottom), <code>s</code> (start/left), <code>e</code> (end/right), <code>x</code> (eje X), <code>y</code> (eje Y).<br>
+                    - Ejemplo: <code>.mt-3</code> (margin-top de tamaño 3), <code>.px-5</code> (padding en X de tamaño 5).
+                </dd>
+            </dl>
+        </section>
+
+        <section id="css">
+            <h2>Conceptos CSS</h2>
+            <p>Definiciones clave de CSS moderno.</p>
+            
+            <dl>
+                <dt>Flexbox</dt>
+                <dd>
+                    Modelo de diseño unidimensional. Se activa con <code>display: flex;</code>.<br>
+                    - Eje principal: <code>justify-content</code> (space-between, center, etc).<br>
+                    - Eje secundario: <code>align-items</code> (center, flex-start, etc).
+                </dd>
+
+                <dt>CSS Grid</dt>
+                <dd>
+                    Modelo de diseño bidimensional (filas y columnas). Se activa con <code>display: grid;</code>.<br>
+                    Perfecto para layouts complejos de página.
+                </dd>
+            </dl>
+        </section>
+        
+    </main>
+
+</body>
+</html>
+```
