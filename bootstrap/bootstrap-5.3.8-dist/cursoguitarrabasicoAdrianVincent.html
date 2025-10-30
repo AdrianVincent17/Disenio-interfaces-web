@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Guitarra Clásica</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fff;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            page-break-after: always;
+            position: relative;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cover .guitar-icon {
+            font-size: 120px;
+            margin: 30px 0;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Diagrama de mástil visual mejorado */
+        .visual-fretboard {
+            background: linear-gradient(to bottom, #8B4513 0%, #654321 100%);
+            border: 3px solid #4a2511;
+            border-radius: 8px;
+            padding: 30px 20px;
+            margin: 20px auto;
+            max-width: 280px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .fret-line {
+            height: 2px;
+            background: #c0c0c0;
+            margin: 18px 0;
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .string {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #ffd700 0%, #daa520 100%);
+            top: 0;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .finger-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            border: 2px solid white;
+        }
+
+        .finger-1 {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .finger-2 {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .finger-3 {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .finger-4 {
+            background: linear-gradient(135deg, #f39c12, #d68910);
+        }
+
+        /* Mano ilustrada */
+        .hand-illustration {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .fingers-diagram {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .finger-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .finger-shape {
+            width: 40px;
+            border-radius: 20px 20px 5px 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .thumb {
+            height: 60px;
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        }
+
+        .index {
+            height: 80px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .middle {
+            height: 90px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .ring {
+            height: 85px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .pinky {
+            height: 70px;
+            background: linear-gradient(135deg, #f39c12, #d68910);
+        }
+
+        /* Diagramas de acordes mejorados */
+        .chord-box {
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chord-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #764ba2;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 8px;
+        }
+
+        .chord-grid {
+            display: inline-block;
+            margin: 15px auto;
+        }
+
+        .grid-strings {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+
+        .grid-string {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .string-label {
+            width: 25px;
+            font-weight: bold;
+            color: #667eea;
+            font-size: 14px;
+        }
+
+        .grid-frets {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .fret-position {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            background: white;
+        }
+
+        .fret-position.active {
+            border: 2px solid white;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .fret-position.open {
+            background: #2ecc71;
+            border-color: #27ae60;
+            color: white;
+        }
+
+        .fret-position.muted {
+            background: #e74c3c;
+            border-color: #c0392b;
+            color: white;
+            font-size: 16px;
+        }
+
+        .guitar-neck-visual {
+            background: linear-gradient(to right, #8B4513, #654321);
+            border: 3px solid #4a2511;
+            border-radius: 10px;
+            padding: 30px 15px;
+            margin: 20px auto;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .neck-strings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .neck-string {
+            height: 2px;
+            background: linear-gradient(to right, #ffd700, #daa520);
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .exercise {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .exercise::before {
+            content: "💡 Ejercicio: ";
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+        }
+
+        .tip::before {
+            content: "✓ Consejo: ";
+            font-weight: bold;
+            color: #155724;
+        }
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .level-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 10mm;
+            right: 20mm;
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+            }
+
+            button {
+                display: none;
+            }
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background: #764ba2;
+        }
+
+        .posture-diagram {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .guitar-parts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .part-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-button" onclick="window.print()">📄 Descargar PDF</button>
+
+    <!-- PORTADA -->
+    <div class="page cover">
+        <div class="guitar-icon">🎸</div>
+        <h1>Curso Completo de<br>Guitarra Clásica</h1>
+        <p class="subtitle">Del nivel principiante al avanzado</p>
+        <p style="margin-top: 40px; font-size: 18px;">Un método progresivo con diagramas visuales detallados<br>By AdrianVincent</p>
+    </div>
+
+    <!-- ÍNDICE -->
+    <div class="page">
+        <h1>📋 Índice del Curso</h1>
+
+        <div style="margin-top: 30px; line-height: 2;">
+            <h2>Nivel 1: Principiante</h2>
+            <ul>
+                <li>Lección 1: Conociendo la Guitarra y Postura Correcta.............. 3</li>
+                <li>Lección 2: Posición de las Manos................................................ 5</li>
+                <li>Lección 3: Primeros Acordes Mayores......................................... 7</li>
+                <li>Lección 4: Acordes Menores Básicos........................................... 10</li>
+            </ul>
+
+            <h2>Nivel 2: Básico</h2>
+            <ul>
+                <li>Lección 5: Arpegios Básicos....................................................... 13</li>
+                <li>Lección 6: Nuevos Acordes......................................................... 14</li>
+                <li>Lección 7: Ritmos Básicos de Rasgueo...................................... 16</li>
+                <li>Lección 8: Acordes con Cejilla.................................................... 17</li>
+            </ul>
+
+            <h2>Nivel 3: Intermedio</h2>
+            <ul>
+                <li>Lección 9: Acordes de Séptima................................................... 19</li>
+                <li>Lección 10: Técnicas de Expresión............................................. 20</li>
+                <li>Lección 11: Escalas Musicales.................................................... 21</li>
+                <li>Lección 12: Ritmos Avanzados.................................................... 22</li>
+            </ul>
+
+            <h2>Nivel 4: Avanzado</h2>
+            <ul>
+                <li>Lección 13: Acordes Extendidos................................................. 23</li>
+                <li>Lección 14: Técnicas Avanzadas................................................ 24</li>
+                <li>Lección 15: Armónicos y Efectos............................................... 25</li>
+                <li>Lección 16: Repertorio Clásico.................................................. 26</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- NIVEL 1: LECCIÓN 1 -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 1: Conociendo la Guitarra</h1>
+
+        <h2>Partes de la Guitarra Clásica</h2>
+        <div class="guitar-parts">
+            <div class="part-item">
+                <strong>🎵 Clavijero:</strong> Afinación de cuerdas
+            </div>
+            <div class="part-item">
+                <strong>🎵 Cejuela:</strong> Inicio del mástil
+            </div>
+            <div class="part-item">
+                <strong>🎵 Trastes:</strong> Divisiones metálicas
+            </div>
+            <div class="part-item">
+                <strong>🎵 Diapasón:</strong> Superficie del mástil
+            </div>
+            <div class="part-item">
+                <strong>🎵 Boca:</strong> Abertura de resonancia
+            </div>
+            <div class="part-item">
+                <strong>🎵 Caja:</strong> Cuerpo resonante
+            </div>
+            <div class="part-item">
+                <strong>🎵 Puente:</strong> Anclaje de cuerdas
+            </div>
+            <div class="part-item">
+                <strong>🎵 Cuerdas:</strong> 6 cuerdas de nylon
+            </div>
+        </div>
+
+        <h2>Nombres y Afinación de las Cuerdas</h2>
+        <div class="guitar-neck-visual">
+            <div class="neck-strings">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                  <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 35px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">1ª - Mi (E)</span>
+                    <div class="neck-string" style="height: 1px;"></div>
+                    <span style="color: #fff; font-size: 12px;">Más aguda</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 85px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">2ª - Si (B)</span>
+                    <div class="neck-string" style="height: 1.5px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 135px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">3ª - Sol (G)</span>
+
+                    <div class="neck-string" style="height: 1.5px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 185px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">4ª - Re (D)</span>
+                    <div class="neck-string" style="height: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 235px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">5ª - La (A)</span>
+
+                    <div class="neck-string" style="height: 2px;"></div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="position: absolute; width: 95%; height: 1px; background: #c0c0c0; top: 285px;"></div>
+                    <span style="color: #ffd700; font-weight: bold; width: 100px; margin-left: 150px;">6ª - Mi (E)</span>
+                    <div class="neck-string" style="height: 2.5px;"></div>
+                    <span style="color: #fff; font-size: 12px;">Más grave</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>Postura Correcta</h2>
+        <div class="posture-diagram">
+            <h3 style="color: #667eea; margin-bottom: 15px;">✓ Postura Ideal del Guitarrista Clásico</h3>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <ul style="text-align: left; line-height: 2;">
+                    <li><strong>Espalda:</strong> Erguida, sin encorvarse</li>
+                    <li><strong>Hombros:</strong> Relajados y nivelados</li>
+                    <li><strong>Pierna izquierda:</strong> Ligeramente elevada (usa reposapiés)</li>
+                    <li><strong>Guitarra:</strong> Apoyada sobre pierna izquierda</li>
+                    <li><strong>Mástil:</strong> Inclinado hacia arriba 45°</li>
+                    <li><strong>Codo derecho:</strong> Apoyado suavemente en la caja</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tip">
+            La postura correcta previene lesiones y mejora tu técnica. Dedica tiempo a perfeccionarla desde el
+            principio.
+        </div>
+
+        <div class="exercise">
+            Siéntate con la guitarra en posición correcta durante 5 minutos sin tocar. Observa tu reflejo en un espejo y
+            corrige cualquier problema.
+        </div>
+
+        <span class="page-number">Página 3</span>
+    </div>
+
+    <!-- LECCIÓN 2: MANOS -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 2: Posición de las Manos</h1>
+
+        <h2>Mano Derecha - Notación y Funciones</h2>
+        <div class="hand-illustration">
+            <h3>Dedos de la Mano Derecha</h3>
+            <div class="fingers-diagram">
+                <div class="finger-visual">
+                    <div class="finger-shape thumb">p</div>
+                    <span style="font-weight: bold;">Pulgar</span>
+                    <span style="font-size: 12px; color: #666;">Cuerdas 4, 5, 6</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape index">i</div>
+                    <span style="font-weight: bold;">Índice</span>
+                    <span style="font-size: 12px; color: #666;">Cuerda 3</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape middle">m</div>
+                    <span style="font-weight: bold;">Medio</span>
+                    <span style="font-size: 12px; color: #666;">Cuerda 2</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape ring">a</div>
+                    <span style="font-weight: bold;">Anular</span>
+                    <span style="font-size: 12px; color: #666;">Cuerda 1</span>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 20px; text-align: left;">
+                <h4 style="color: #667eea; margin-bottom: 10px;">Posición correcta:</h4>
+                <ul>
+                    <li>Mano sobre la boca de la guitarra</li>
+                    <li>Dedos ligeramente curvados</li>
+                    <li>Ataca con las yemas de los dedos</li>
+                    <li>Muñeca relajada, no tensa</li>
+                    <li>Movimiento desde los nudillos</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Mano Izquierda - Numeración de Dedos</h2>
+        <div class="hand-illustration">
+            <h3>Dedos de la Mano Izquierda</h3>
+            <div class="fingers-diagram">
+                <div class="finger-visual">
+                    <div class="finger-shape thumb" style="height: 55px;">T</div>
+                    <span style="font-weight: bold;">Pulgar</span>
+                    <span style="font-size: 12px; color: #666;">Detrás del mástil</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape index">1</div>
+                    <span style="font-weight: bold;">Índice</span>
+                    <span style="font-size: 12px; color: #666;">Dedo 1</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape middle">2</div>
+                    <span style="font-weight: bold;">Medio</span>
+                    <span style="font-size: 12px; color: #666;">Dedo 2</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape ring">3</div>
+                    <span style="font-weight: bold;">Anular</span>
+                    <span style="font-size: 12px; color: #666;">Dedo 3</span>
+                </div>
+                <div class="finger-visual">
+                    <div class="finger-shape pinky">4</div>
+                    <span style="font-weight: bold;">Meñique</span>
+                    <span style="font-size: 12px; color: #666;">Dedo 4</span>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 15px; border-radius: 10px; margin-top: 20px; text-align: left;">
+                <h4 style="color: #667eea; margin-bottom: 10px;">Técnica correcta:</h4>
+                <ul>
+                    <li>Pulgar centrado detrás del mástil</li>
+                    <li>Dedos perpendiculares a las cuerdas</li>
+                    <li>Presionar cerca del traste (no encima)</li>
+                    <li>Muñeca recta, sin doblar</li>
+                    <li>Dedos curvados usando las yemas</li>
+                    <li>No colapsar las articulaciones</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"></div>
+                <span>Dedo 1 (Índice)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #3498db, #2980b9);"></div>
+                <span>Dedo 2 (Medio)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #2ecc71, #27ae60);"></div>
+                <span>Dedo 3 (Anular)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #f39c12, #d68910);"></div>
+                <span>Dedo 4 (Meñique)</span>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <strong>Ejercicio de colocación:</strong> Coloca tu mano izquierda en el mástil verificando cada punto de la
+            técnica correcta. Mantén la posición 30 segundos. Relaja. Repite 10 veces.
+        </div>
+
+        <span class="page-number">Página 5</span>
+    </div>
+
+    <!-- LECCIÓN 3: ACORDES MAYORES -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 3: Primeros Acordes Mayores</h1>
+
+        <h2>Acorde de Do Mayor (C)</h2>
+        <div class="chord-box">
+            <div class="chord-title">DO MAYOR (C)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 75px; top: 28px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 125px; top: 68px;">2</div>
+                    <div class="finger-dot finger-3" style="left: 175px; top: 88px;">3</div>
+
+                    <!-- Indicadores -->
+                    <div style="position: absolute; right: -30px; top: 8px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 108px; color: #e74c3c; font-size: 18px;">✕</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 2ª cuerda, traste 1<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 4ª cuerda, traste 2<br>
+                <span style="color: #2ecc71;">● Dedo 3:</span> 5ª cuerda, traste 3<br>
+                <span style="color: #2ecc71;">○ Tocar</span> | <span style="color: #e74c3c;">✕ No tocar</span>
+            </div>
+        </div>
+
+        <h2>Acorde de Sol Mayor (G)</h2>
+        <div class="chord-box">
+            <div class="chord-title">SOL MAYOR (G)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 125px; top: 88px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 175px; top: 108px;">2</div>
+                    <div class="finger-dot finger-3" style="left: 175px; top: 8px;">3</div>
+
+                    <!-- Indicadores -->
+                    <div style="position: absolute; right: -30px; top: 28px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 48px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 68px; color: #2ecc71; font-size: 18px;">○</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 5ª cuerda, traste 2<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 6ª cuerda, traste 3<br>
+                <span style="color: #2ecc71;">● Dedo 3:</span> 1ª cuerda, traste 3<br>
+                <span style="font-size: 12px;">Tocar todas las cuerdas</span>
+            </div>
+        </div>
+
+        <span class="page-number">Página 7</span>
+    </div>
+
+    <!-- CONTINUACIÓN LECCIÓN 3 -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 3: Acordes Mayores (continuación)</h1>
+
+        <h2>Acorde de Re Mayor (D)</h2>
+        <div class="chord-box">
+            <div class="chord-title">RE MAYOR (D)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 125px; top: 48px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 125px; top: 8px;">2</div>
+                    <div class="finger-dot finger-3" style="left: 175px; top: 28px;">3</div>
+
+                    <!-- Indicadores -->
+                    <div style="position: absolute; right: -30px; top: 68px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 88px; color: #e74c3c; font-size: 18px;">✕</div>
+                    <div style="position: absolute; right: -30px; top: 108px; color: #e74c3c; font-size: 18px;">✕</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 3ª cuerda, traste 2<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 1ª cuerda, traste 2<br>
+                <span style="color: #2ecc71;">● Dedo 3:</span> 2ª cuerda, traste 3<br>
+                <span style="font-size: 12px;">Solo 4 cuerdas (no tocar 5ª y 6ª)</span>
+            </div>
+        </div>
+
+        <div class="tip">
+            Estos tres acordes (C, G, D) son fundamentales. Practica cambiar entre ellos lentamente. La velocidad vendrá
+            con el tiempo.
+        </div>
+
+        <div class="exercise">
+            <strong>Progresión básica:</strong> C → G → D → G<br><br>
+            1. Coloca el acorde de Do Mayor<br>
+            2. Verifica que todas las notas suenen claras<br>
+            3. Toca el acorde 4 veces (con arpegio p-i-m-a)<br>
+            4. Cambia lentamente al siguiente acorde<br>
+            5. Repite durante 10 minutos diarios
+        </div>
+
+        <h2>Consejos para cambios de acordes</h2>
+        <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <ul>
+                <li>Cambia despacio al principio, la velocidad llegará</li>
+                <li>Busca dedos que pueden quedarse en la misma posición</li>
+                <li>Visualiza mentalmente el siguiente acorde</li>
+                <li>Mueve todos los dedos simultáneamente</li>
+                <li>No mires la mano derecha, enfócate en la izquierda</li>
+                <li>Practica el cambio de vuelta (D → G → C)</li>
+            </ul>
+        </div>
+
+        <span class="page-number">Página 8</span>
+    </div>
+
+    <!-- LECCIÓN 4: ACORDES MENORES -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 4: Acordes Menores Básicos</h1>
+
+        <h2>Acorde de La menor (Am)</h2>
+        <div class="chord-box">
+            <div class="chord-title">LA MENOR (Am)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 75px; top: 28px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 125px; top: 68px;">2</div>
+                    <div class="finger-dot finger-3" style="left: 125px; top: 48px;">3</div>
+
+                    <!-- Indicadores -->
+                    <div style="position: absolute; right: -30px; top: 8px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 88px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 108px; color: #e74c3c; font-size: 18px;">✕</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 2ª cuerda, traste 1<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 4ª cuerda, traste 2<br>
+                <span style="color: #2ecc71;">● Dedo 3:</span> 3ª cuerda, traste 2<br>
+                <span style="font-size: 12px;">Nota: Muy similar a Do Mayor</span>
+            </div>
+        </div>
+
+        <h2>Acorde de Mi menor (Em)</h2>
+        <div class="chord-box">
+            <div class="chord-title">MI MENOR (Em)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 125px; top: 88px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 125px; top: 68px;">2</div>
+
+                    <!-- Indicadores (todas al aire) -->
+                    <div style="position: absolute; right: -30px; top: 8px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 28px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 48px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 108px; color: #2ecc71; font-size: 18px;">○</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 5ª cuerda, traste 2<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 4ª cuerda, traste 2<br>
+                <span style="font-size: 12px;">¡El acorde más fácil! Solo 2 dedos</span>
+            </div>
+        </div>
+
+        <span class="page-number">Página 10</span>
+    </div>
+
+    <!-- CONTINUACIÓN LECCIÓN 4 -->
+    <div class="page">
+        <span class="level-badge">NIVEL 1: PRINCIPIANTE</span>
+        <h1>Lección 4: Acordes Menores (continuación)</h1>
+
+        <h2>Acorde de Re menor (Dm)</h2>
+        <div class="chord-box">
+            <div class="chord-title">RE MENOR (Dm)</div>
+
+            <div class="visual-fretboard">
+                <div style="position: relative; height: 120px;">
+                    <!-- Cuerdas -->
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 20px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 40px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 60px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 80px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 100px;"></div>
+                    <div style="position: absolute; width: 100%; height: 1px; background: #ffd700; top: 120px;"></div>
+
+                    <!-- Trastes -->
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 50px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 100px;"></div>
+                    <div style="position: absolute; height: 100%; width: 2px; background: #c0c0c0; left: 150px;"></div>
+
+                    <!-- Dedos -->
+                    <div class="finger-dot finger-1" style="left: 75px; top: 8px;">1</div>
+                    <div class="finger-dot finger-2" style="left: 125px; top: 48px;">2</div>
+                    <div class="finger-dot finger-3" style="left: 175px; top: 28px;">3</div>
+
+                    <!-- Indicadores -->
+                    <div style="position: absolute; right: -30px; top: 68px; color: #2ecc71; font-size: 18px;">○</div>
+                    <div style="position: absolute; right: -30px; top: 88px; color: #e74c3c; font-size: 18px;">✕</div>
+                    <div style="position: absolute; right: -30px; top: 108px; color: #e74c3c; font-size: 18px;">✕</div>
+                </div>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 12px; border-radius: 8px; margin-top: 15px;">
+                <strong>Digitación:</strong><br>
+                <span style="color: #e74c3c;">● Dedo 1:</span> 1ª cuerda, traste 1<br>
+                <span style="color: #3498db;">● Dedo 2:</span> 3ª cuerda, traste 2<br>
+                <span style="color: #2ecc71;">● Dedo 3:</span> 2ª cuerda, traste 3
+            </div>
+        </div>
+
+        <h2>Diferencia entre Acordes Mayores y Menores</h2>
+        <div
+            style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 20px; border-radius: 12px; margin: 20px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #2ecc71;">
+                    <h3 style="color: #2ecc71; margin-bottom: 10px;">Acordes Mayores</h3>
+                    <p style="font-size: 14px;">Sonido brillante, alegre, positivo. Se usan en música festiva y
+                        optimista.</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
+                    <h3 style="color: #3498db; margin-bottom: 10px;">Acordes Menores</h3>
+                    <p style="font-size: 14px;">Sonido melancólico, triste, introspectivo. Se usan en música emotiva y
+                        profunda.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <strong>Progresión melancólica:</strong> Am → Em → Dm → Em<br><br>
+            Practica esta secuencia con arpegios (p-i-m-a). Nota cómo los acordes menores crean una atmósfera diferente
+            a los mayores.
+        </div>
+
+        <div class="exercise">
+            <strong>Progresión combinada:</strong> C → Am → F → G<br><br>
+            Esta es LA progresión más popular en la música pop. Alterna entre mayores y menores creando interés musical.
+        </div>
+
+        <div class="tip">
+            Los acordes menores son tan importantes como los mayores. Juntos forman la base de prácticamente toda la
+            música occidental.
+        </div>
+
+        <span class="page-number">Página 11</span>
+    </div>
+
+    <!-- NIVEL 2: LECCIÓN 5 - ARPEGIOS -->
+    <div class="page">
+        <span class="level-badge">NIVEL 2: BÁSICO</span>
+        <h1>Lección 5: Arpegios Básicos</h1>
+
+        <h2>¿Qué es un arpegio?</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <p>Un arpegio es tocar las notas de un acorde una por una en lugar de todas juntas. Es la técnica
+                fundamental de la guitarra clásica.</p>
+        </div>
+
+        <h2>Patrón 1: p-i-m-a (Básico)</h2>
+        <div class="hand-illustration">
+            <h3>Secuencia del Arpegio</h3>
+            <div style="background: white; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <div style="display: flex; justify-content: space-around; align-items: center; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <div
+                            style="background: linear-gradient(135deg, #95a5a6, #7f8c8d); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; margin: 0 auto; box-shadow: 0 3px 6px rgba(0,0,0,0.2);">
+                            p</div>
+                        <div style="margin-top: 10px; font-weight: bold;">Tiempo 1</div>
+                        <div style="font-size: 12px; color: #666;">Nota grave</div>
+                    </div>
+                    <div style="font-size: 30px; color: #667eea;">→</div>
+                    <div style="text-align: center;">
+                        <div
+                            style="background: linear-gradient(135deg, #e74c3c, #c0392b); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; margin: 0 auto; box-shadow: 0 3px 6px rgba(0,0,0,0.2);">
+                            i</div>
+                        <div style="margin-top: 10px; font-weight: bold;">Tiempo 2</div>
+                        <div style="font-size: 12px; color: #666;">3ª cuerda</div>
+                    </div>
+                    <div style="font-size: 30px; color: #667eea;">→</div>
+                    <div style="text-align: center;">
+                        <div
+                            style="background: linear-gradient(135deg, #3498db, #2980b9); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; margin: 0 auto; box-shadow: 0 3px 6px rgba(0,0,0,0.2);">
+                            m</div>
+                        <div style="margin-top: 10px; font-weight: bold;">Tiempo 3</div>
+                        <div style="font-size: 12px; color: #666;">2ª cuerda</div>
+                    </div>
+                    <div style="font-size: 30px; color: #667eea;">→</div>
+                    <div style="text-align: center;">
+                        <div
+                            style="background: linear-gradient(135deg, #2ecc71, #27ae60); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; margin: 0 auto; box-shadow: 0 3px 6px rgba(0,0,0,0.2);">
+                            a</div>
+                        <div style="margin-top: 10px; font-weight: bold;">Tiempo 4</div>
+                        <div style="font-size: 12px; color: #666;">1ª cuerda</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <strong>Ejercicio en Do Mayor:</strong><br>
+            1. Coloca el acorde de Do Mayor<br>
+            2. Toca p (5ª cuerda) - cuenta "1"<br>
+            3. Toca i (3ª cuerda) - cuenta "2"<br>
+            4. Toca m (2ª cuerda) - cuenta "3"<br>
+            5. Toca a (1ª cuerda) - cuenta "4"<br>
+            6. Repite 20 veces sin parar
+        </div>
+
+        <h2>Patrón 2: p-i-m-a-m-i (Ida y Vuelta)</h2>
+        <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <div style="text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 10px; margin: 15px 0;">
+                p → i → m → a → m → i
+            </div>
+            <p style="text-align: center; margin-top: 15px;">
+                Este patrón crea un efecto de "cascada" suave y continua
+            </p>
+        </div>
+
+        <div class="tip">
+            La clave de un buen arpegio es la uniformidad. Cada nota debe tener el mismo volumen y duración. Usa
+            metrónomo a 60 bpm.
+        </div>
+
+        <div class="exercise">
+            <strong>Progresión con arpegios:</strong> C → Am → F → G<br><br>
+            Toca cada acorde con el patrón p-i-m-a-m-i. Repite cada acorde 4 veces antes de cambiar. Practica 15 minutos
+            diarios.
+        </div>
+
+        <span class="page-number">Página 13</span>
+    </div>
+
+    <!-- Mensaje final indicando que el curso continúa -->
+    <div class="page"
+        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        <div class="guitar-icon" style="font-size: 100px;">🎸</div>
+        <h1 style="color: white; border: none; font-size: 42px; margin-top: 30px;">Curso Completo</h1>
+        <p style="font-size: 24px; margin: 30px 0; max-width: 600px;">
+            Este curso incluye diagramas visuales mejorados con ilustraciones de dedos en colores para facilitar el
+            aprendizaje.
+        </p>
+
+        <div
+            style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 30px 0; max-width: 700px;">
+            <h2 style="color: white; font-size: 28px; margin-bottom: 20px;">Contenido del Curso:</h2>
+            <ul style="text-align: left; font-size: 18px; line-height: 2;">
+                <li>✓ Diagramas visuales de mástil con colores</li>
+                <li>✓ Ilustraciones de posiciones de dedos</li>
+                <li>✓ Código de colores para cada dedo</li>
+                <li>✓ 16 lecciones progresivas completas</li>
+                <li>✓ Más de 30 acordes explicados visualmente</li>
+                <li>✓ Ejercicios prácticos en cada lección</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div
+                        style="background: linear-gradient(135deg, #e74c3c, #c0392b); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                        1</div>
+                    <div style="margin-top: 8px; font-size: 14px;">Dedo Índice</div>
+                </div>
+                <div style="text-align: center;">
+                    <div
+                        style="background: linear-gradient(135deg, #3498db, #2980b9); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                        2</div>
+                    <div style="margin-top: 8px; font-size: 14px;">Dedo Medio</div>
+                </div>
+                <div style="text-align: center;">
+                    <div
+                        style="background: linear-gradient(135deg, #2ecc71, #27ae60); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                        3</div>
+                    <div style="margin-top: 8px; font-size: 14px;">Dedo Anular</div>
+                </div>
+                <div style="text-align: center;">
+                    <div
+                        style="background: linear-gradient(135deg, #f39c12, #d68910); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                        4</div>
+                    <div style="margin-top: 8px; font-size: 14px;">Dedo Meñique</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 20px; margin-top: 60px; font-style: italic;">
+            "La guitarra es un pequeño universo de posibilidades infinitas"
+        </p>
+
+        <p style="font-size: 16px; margin-top: 40px; opacity: 0.8;">
+            Haz clic en "Descargar PDF" para guardar este curso completo
+        </p>
+    </div>
+
+    <script>
+        window.onload = function () {
+            console.log('Curso de Guitarra Clásica con diagramas visuales mejorados cargado correctamente');
+        };
+    </script>
+</body>
+
+</html>

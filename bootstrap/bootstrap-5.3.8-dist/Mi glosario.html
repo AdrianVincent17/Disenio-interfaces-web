@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glosario de Bootstrap 5</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
 
     <style>
         /* CSS Personalizado para el glosario en modo oscuro */
-        
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             /* Ajuste para que el menú fijo no tape los títulos */
-            scroll-padding-top: 100px; 
+            scroll-padding-top: 100px;
         }
 
         /* Estilos del Glosario con acentos azules */
         dt {
             /* Término: Color azul primario */
-            color: var(--bs-primary); 
+            color: var(--bs-primary);
             font-weight: bold;
             font-size: 1.15em;
             margin-top: 1.5rem;
@@ -30,17 +37,27 @@
 
         dd {
             /* Definición: Fondo gris oscuro (terciario) */
-            background-color: var(--bs-tertiary-bg); 
+            background-color: var(--bs-tertiary-bg);
             /* Borde izquierdo azul */
-            border-left: 4px solid var(--bs-primary); 
+            border-left: 4px solid var(--bs-primary);
             padding: 10px 15px;
             margin-left: 20px;
             margin-bottom: 1rem;
         }
-        
+
         /* Código dentro de las definiciones */
-        dd code {
+        dd code,
+        dd pre {
             font-weight: 600;
+        }
+
+        /* Estilo para los bloques de código */
+        dd pre {
+            background-color: var(--bs-dark-bg-subtle);
+            border: 1px solid var(--bs-border-color);
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9em;
         }
 
         /* Estilos para las sub-listas dentro de una definición */
@@ -50,18 +67,23 @@
         }
     </style>
 </head>
+
 <body>
 
     <header class="container text-center p-4 pt-5">
-        <h1 class="display-4">El chuleton de Bootstrap 5</h1>
+        <h1 class="display-4">Glosario de Bootstrap 5</h1>
     </header>
 
     <nav class="navbar p-3 sticky-top bg-dark border-bottom border-secondary">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid justify-content-center flex-wrap">
             <a class="btn btn-outline-primary m-1" href="#introduccion">Introducción</a>
             <a class="btn btn-outline-primary m-1" href="#sistema-grid">Sistema Grid</a>
             <a class="btn btn-outline-primary m-1" href="#textos-tipografia">Textos y Tipografía</a>
             <a class="btn btn-outline-primary m-1" href="#imagenes-tablas">Imágenes y Tablas</a>
+            <a class="btn btn-outline-primary m-1" href="#colores-fondos">Colores & Fondos</a>
+            <a class="btn btn-outline-primary m-1" href="#botones-dropdowns">Botones & Dropdowns</a>
+            <a class="btn btn-outline-primary m-1" href="#navbars">Navbars (Barras de Nav.)</a>
+
         </div>
     </nav>
 
@@ -72,146 +94,153 @@
             <dl>
                 <dt>¿Qué es Bootstrap?</dt>
                 <dd>
-                    Un framework de diseño web (CSS y JS) creado por Twitter. Es Open Source y facilita la creación de sitios web con diseño adaptable ("responsive") y bajo la filosofía "Mobile First".
+                    Un framework de diseño web (CSS y JS) creado por Twitter. Es Open Source y facilita la creación
+                    de
+                    sitios web con diseño adaptable ("responsive") y bajo la filosofía "Mobile First".
                 </dd>
-
                 <dt>Ventajas</dt>
                 <dd>
-                    Permite crear diseños adaptables que se ajustan a cualquier pantalla (móvil, tablet, escritorio). Acelera el desarrollo, asegura consistencia visual y es compatible con todos los navegadores modernos.
+                    Permite crear diseños adaptables que se ajustan a cualquier pantalla (móvil, tablet, escritorio).
+                    Acelera el desarrollo, asegura consistencia visual y es compatible con todos los navegadores
+                    modernos.
                 </dd>
 
-                <dt>Instalación (CDN)</dt>
+                <dt>Instalación Remota (CDN)</dt>
                 <dd>
-                    La forma más rápida. Se enlaza el archivo CSS en el <code>&lt;head&gt;</code> y el archivo JS (Bundle) antes de cerrar el <code>&lt;body&gt;</code>.
+                    Es la forma más rápida y recomendada para prototipar. Se enlaza a los archivos de Bootstrap alojados
+                    en un servidor externo (CDN). Requiere conexión a internet.
+
+                    <p class="mt-3 mb-2 text-white">Código para el <code>&lt;head&gt;</code> (CSS):</p>
+                    <pre><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"&gt;</code></pre>
+
+                    <p class="mt-3 mb-2 text-white">Código antes de cerrar <code>&lt;/body&gt;</code> (JavaScript):</p>
+                    <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
                 </dd>
-                
-                <dt>Instalación (Archivos Compilados)</dt>
+
+                <dt>Instalación Local (Archivos)</dt>
                 <dd>
-                    Descargas los archivos <code>.css</code> y <code>.js</code> compilados. La estructura incluye:
-                    <ul>
-                        <li><code>bootstrap.min.css</code>: El CSS compilado y minimizado.</li>
-                        <li><code>bootstrap.bundle.min.js</code>: El JavaScript compilado y minimizado, que incluye Popper.js (necesario para dropdowns, tooltips, etc.).</li>
-                    </ul>
-                    <dt>Instalación (Archivos en local)</dt>
-                <dd>
-                    Descargas los archivos <code>.css</code> y <code>.js</code> compilados en una etiqueta <link rel="stylesheet" href="style.css"></p>. La estructura incluye:
-                    <ul>
-                        <li><code>bootstrap.min.css</code>: El CSS compilado y minimizado.</li>
-                        <li><code>bootstrap.bundle.min.js</code>: El JavaScript compilado y minimizado, que incluye Popper.js (necesario para dropdowns, tooltips, etc.).</li>
-                    </ul>
+                    Se descargan los archivos <code>.css</code> y <code>.js</code> compilados desde la web oficial de
+                    Bootstrap y se alojan en carpetas dentro de tu proyecto. No requiere conexión a internet para
+                    funcionar.
+
+                    <p class="mt-3 mb-2 text-white">Código para el <code>&lt;head&gt;</code> (CSS):</p>
+                    <pre><code>&lt;!-- La ruta './css/' depende de dónde guardes el archivo --&gt;
+&lt;link rel="stylesheet" href="./css/bootstrap.min.css"&gt;</code></pre>
+
+                    <p class="mt-3 mb-2 text-white">Código antes de cerrar <code>&lt;/body&gt;</code> (JavaScript):</p>
+                    <pre><code>&lt;!-- La ruta './js/' depende de dónde guardes el archivo --&gt;
+&lt;script src="./js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
                 </dd>
-                </dd>
+
             </dl>
         </section>
 
+        <hr>
+
         <section id="sistema-grid" class="pt-5 pb-4 mb-5">
-            <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">2. Sistema Grid</h2>
+            <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">2. Sistema Grid (Rejilla) y Flexbox</h2>
             <dl>
-                <dt>Concepto Principal</dt>
+                <dt>Concepto Principal del Grid</dt>
                 <dd>
-                    Un sistema de rejilla "Mobile First" basado en <strong>12 columnas</strong>. Permite estructurar el contenido de forma flexible y responsiva.
-                </dd>
-                
-                <dt>Estructura Básica</dt>
-                <dd>
-                    La rejilla siempre sigue esta jerarquía:
+                    Un sistema de rejilla "Mobile First" basado en 12 columnas. Permite estructurar el
+                    contenido de forma flexible y responsiva.
                     <br>
-                    <code>.container</code> (o <code>.container-fluid</code>) > <code>.row</code> > <code>.col-*</code>
+                    Jerarquía: <code>.container</code>, <code>.row</code>, <code>.col-*</code>
                 </dd>
 
-                <dt><code>.container</code> vs <code>.container-fluid</code></dt>
+                <dt>Clases de Columnas Responsivas</dt>
                 <dd>
-                    <code>.container</code>: Tiene un ancho máximo (<code>max-width</code>) que cambia según el tamaño de pantalla. El contenido queda centrado.
-                    <br>
-                    <code>.container-fluid</code>: Ocupa siempre el 100% del ancho (<code>width: 100%</code>).
-                </dd>
-
-                <dt><code>.col-*</code> (Columnas)</dt>
-                <dd>
-                    Define el ancho de una columna (cuántas de las 12 columnas virtuales ocupa).
-                    <br>
-                    <code>.col</code>: Ancho automático. Se reparten el espacio equitativamente.
-                    <br>
-                    <code>.col-6</code>: Ocupa 6 de 12 columnas (la mitad del ancho) en todos los tamaños.
-                    <br>
-                    <code>.col-md-4</code>: Ocupa 4 de 12 columnas en pantallas medianas (<code>md</code>) y más grandes. En pantallas pequeñas ocupa el 100%.
-                </dd>
-                
-                <dt>Alineación de Columnas (Flexbox)</dt>
-                <dd>
-                    Puedes usar utilidades de Flexbox en la fila (<code>.row</code>) para alinear las columnas.
-                    <br>
-                    <strong class="text-white">Alineación Horizontal (se aplica a <code>.row</code>):</strong>
+                    Define el ancho de la columna (1 a 12). Se pueden combinar breakpoints para diseños avanzados.
                     <ul>
-                        <li><code>.justify-content-center</code>: Centra las columnas horizontalmente.</li>
-                        <li><code>.justify-content-end</code>: Alinea columnas al final.</li>
-                        <li><code>.justify-content-between</code>: Espacio igual entre columnas.</li>
+                        <li><code>.col</code>: Ancho automático. Reparto equitativo.</li>
+                        <li><code>.col-6</code>: Ocupa la mitad (6 de 12) en todos los tamaños.</li>
+                        <li><code>.col-md-4</code>: Ocupa 4 de 12 a partir del tamaño mediano <code>md</code>.</li>
                     </ul>
-                    <strong class="text-white">Alineación Vertical (se aplica a <code>.row</code>):</strong>
+                </dd>
+
+                <dt>Alineación Horizontal de la Fila (Eje X)</dt>
+                <dd>
+                    Estas clases se aplican a la fila <code>.row</code> para distribuir las columnas a lo largo del eje
+                    principal.
+                    Se utiliza la utilidad <code>justify-content-*</code>:
                     <ul>
-                        <li><code>.align-items-start</code>: Alinea todas las columnas arriba.</li>
+                        <li><code>.justify-content-start</code>: Columnas a la izquierda.</li>
+                        <li><code>.justify-content-center</code>: Centra las columnas.</li>
+                        <li><code>.justify-content-end</code>: Columnas a la derecha.</li>
+                        <li><code>.justify-content-around</code>: Distribuye el espacio alrededor de cada columna.
+                        </li>
+                        <li><code>.justify-content-between</code>: Distribuye el espacio entre columnas (extremos
+                            pegados).</li>
+                    </ul>
+                    Ejemplo: `&lt;div class="row justify-content-center"&gt;...&lt;/div&gt;`
+                </dd>
+
+                <dt>Alineación Vertical de la Fila (Eje Y)</dt>
+                <dd>
+                    Estas clases se aplican a la fila <code>.row</code> para alinear todas las columnas verticalmente
+                    dentro
+                    de la fila.
+                    Se utiliza la utilidad <code>align-items-*</code>:
+                    <ul>
+                        <li><code>.align-items-start</code>: Alinea todas las columnas arriba (inicio del
+                            contenedor).</li>
                         <li><code>.align-items-center</code>: Centra todas las columnas verticalmente.</li>
-                        <li><code>.align-items-end</code>: Alinea todas las columnas abajo.</li>
+                        <li><code>.align-items-end</code>: Alinea todas las columnas abajo (fin del contenedor).
+                        </li>
+                        <li><code>.align-items-baseline</code>: Alinea por la línea base del texto.</li>
+                        <li><code>.align-items-stretch</code>: Estira las columnas para que ocupen todo el alto (por
+                            defecto).</li>
                     </ul>
-                    <strong class="text-white">Alineación Vertical (individual, se aplica a <code>.col</code>):</strong>
-                    <ul>
-                        <li><code>.align-self-center</code>: Columna individual al centro.</li>
-                    </ul>
+                    Ejemplo: `&lt;div class="row align-items-center"&gt;...&lt;/div&gt;`
                 </dd>
-                
+
+                <dt>Alineación Vertical Individual <code>align-self-*</code></dt>
+                <dd>
+                    Esta clase se aplica a una columna individual <code>.col-*</code> para anular la alineación vertical
+                    de
+                    la fila y posicionarla de manera independiente.
+                    Se utiliza la utilidad <code>align-self-*</code>:
+                    <ul>
+                        <li><code>.align-self-start</code>: Columna individual arriba.</li>
+                        <li><code>.align-self-center</code>: Columna individual centrada.</li>
+                        <li><code>.align-self-end</code>: Columna individual abajo.</li>
+                    </ul>
+                    Ejemplo: `&lt;div class="col-4 align-self-end"&gt;...&lt;/div&gt;` (Esa columna se va al fondo).
+                </dd>
+
                 <dt>Gutters (Espaciado entre columnas)</dt>
                 <dd>
-                    Controla el espacio *entre* columnas. Este espaciado se aplica como <code>padding</code> a las columnas, y se compensa con <code>margin</code> negativo en la fila (<code>.row</code>).
-                    <br>
-                    Se aplica directamente a la clase <code>.row</code>:
+                    Controla el espacio entre columnas (padding y margen negativo en la fila). Se aplica a la clase
+                    <code>.row</code>:
                     <ul>
-                        <li><code>g-0</code>: Elimina todos los gutters (márgenes y paddings).</li>
-                        <li><code>g-{tamaño}</code>: Asigna gutter horizontal y vertical (tamaño 0-5).</li>
-                        <li><code>gx-{tamaño}</code>: Asigna gutter horizontal (eje X).</li>
-                        <li><code>gy-{tamaño}</code>: Asigna gutter vertical (eje Y).</li>
+                        <li><code>g-0</code>: Elimina todos los gutters.</li>
+                        <li><code>g-{tamaño}</code>: Asigna gutter horizontal y vertical (tamaño **0-5**).</li>
                     </ul>
-                    Ejemplo: <code>&lt;div class="row g-3"&gt;...&lt;/div&gt;</code>
                 </dd>
-                
+
                 <dt>Márgenes y Rellenos (Spacing)</dt>
                 <dd>
-                    Puedes añadir márgenes (<code>margin</code>) o rellenos (<code>padding</code>) a cualquier elemento, incluidas las <code>.row</code> o <code>.col</code>.
+                    Puedes añadir márgenes (<code>margin</code>) o rellenos (<code>padding</code>) a cualquier elemento.
                     <br>
                     <strong>Formato:</strong> <code>{propiedad}{lado}-{tamaño}</code>
                     <ul>
-                        <li><strong>Propiedad:</strong> <code>m</code> (para margin), <code>p</code> (para padding).</li>
-                        <li><strong>Lado:</strong> <code>t</code> (top), <code>b</code> (bottom), <code>s</code> (start/left), <code>e</code> (end/right), <code>x</code> (ejes X), <code>y</code> (ejes Y).</li>
-                        <li><strong>Tamaño:</strong> <code>0</code> (cero), <code>1</code> (pequeño) a <code>5</code> (grande), y <code>auto</code>.</li>
+                        <li><strong>Propiedad:</strong> <code>m</code> (para margin), <code>p</code> (para padding).
+                        </li>
+                        <li><strong>Lado:</strong> <code>t</code> (top), <code>b</code> (bottom), <code>s</code>
+                            (start/left), <code>e</code> (end/right), <code>x</code> (ejes X), <code>y</code> (ejes Y).
+                        </li>
+                        <li><strong>Tamaño:</strong> <code>0</code> (cero), <code>1</code> (pequeño) a <code>5</code>
+                            (grande), y <code>auto</code>.</li>
                     </ul>
-                    <strong>Ejemplos:</strong> <code>.mt-3</code> (margin-top), <code>.px-4</code> (padding horizontal), <code>.mb-5</code> (margin-bottom), <code>.mx-auto</code> (centrar horizontalmente).
-                </dd>
-                <dt>Breakpoints (Puntos de Corte)</dt>
-                <dd>
-                    Son los tamaños de pantalla donde el diseño puede cambiar. Se usan como prefijos (ej. <code>col-<strong>lg</strong>-3</code>).
-                    <ul>
-                        <li><code>sm</code> (>= 576px)</li>
-                        <li><code>md</code> (>= 768px)</li>
-                        <li><code>lg</code> (>= 992px)</li>
-                        <li><code>xl</code> (>= 1200px)</li>
-                        <li><code>xxl</code> (>= 1400px)</li>
-                    </ul>
-                </dd>
-                
-                <dt>Offset (Desplazamiento)</dt>
-                <dd>
-                    <code>.offset-md-2</code>: Empuja la columna 2 espacios (columnas) hacia la derecha, a partir del tamaño <code>md</code>.
-                </dd>
-                
-                <dt>Utilidades Responsive (Display)</dt>
-                <dd>
-                    <code>.d-none</code>: Oculto siempre.
-                    <br>
-                    <code>.d-md-none</code>: Oculto a partir de <code>md</code>.
-                    <br>
-                    <code>.d-lg-block</code>: Visible como bloque a partir de <code>lg</code> (oculto en <code>sm</code> y <code>md</code>).
+                    <strong>Ejemplos:</strong> <code>.mt-3</code> (margin-top), <code>.px-4</code> (padding horizontal),
+                    <code>.mb-5</code> (margin-bottom), <code>.mx-auto</code> (centrar horizontalmente).
                 </dd>
             </dl>
         </section>
+
+        <hr>
 
         <section id="textos-tipografia" class="pt-5 pb-4 mb-5">
             <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">3. Textos y Tipografía</h2>
@@ -220,7 +249,7 @@
                 <dd>
                     Encabezados más grandes y destacados.
                     <br>
-                    Clases: <code>.display-1</code>, <code>.display-2</code>, <code>.display-3</code>, <code>.display-4</code>, <code>.display-5</code>, <code>.display-6</code>.
+                    Clases: <code>.display-1</code>, <code>.display-2</code>, ..., <code>.display-6</code>.
                 </dd>
 
                 <dt><code>.lead</code></dt>
@@ -230,9 +259,9 @@
 
                 <dt>Alineación de Texto</dt>
                 <dd>
-                    <code>.text-start</code> (izquierda), <code>.text-center</code> (centrado), <code>.text-end</code> (derecha).
+                    <code>.text-start</code>, <code>.text-center</code>, <code>.text-end</code>.
                     <br>
-                    <strong>Responsivo:</strong> <code>.text-md-center</code> (centra solo a partir de <code>md</code>).
+                    **Responsivo:** <code>.text-md-center</code> (centra solo a partir de <code>md</code>).
                 </dd>
 
                 <dt>Transformación de Texto</dt>
@@ -246,14 +275,14 @@
                     <br>
                     <code>.fst-italic</code> (cursiva).
                 </dd>
-                
+
                 <dt>Blockquote (Citas)</dt>
                 <dd>
                     <code>.blockquote</code> para la etiqueta <code>&lt;blockquote&gt;</code>.
                     <br>
                     <code>.blockquote-footer</code>: Para indicar la fuente de la cita.
                 </dd>
-                
+
                 <dt>Resaltar Código</dt>
                 <dd>
                     <code>&lt;code&gt;</code>: Para fragmentos de código en línea.
@@ -265,12 +294,15 @@
             </dl>
         </section>
 
+        <hr>
+
         <section id="imagenes-tablas" class="pt-5 pb-4 mb-5">
             <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">4. Imágenes y Tablas</h2>
             <dl>
                 <dt>Imágenes Fluidas (Responsivas)</dt>
                 <dd>
-                    <code>.img-fluid</code>: La clase más importante. Aplica <code>max-width: 100%;</code> y <code>height: auto;</code>.
+                    <code>.img-fluid</code>: La clase más importante. Aplica <code>max-width: 100%;</code> y
+                    <code>height: auto;</code>.
                 </dd>
 
                 <dt>Estilos de Imagen</dt>
@@ -286,14 +318,14 @@
                 <dd>
                     <code>.float-start</code> (izquierda), <code>.float-end</code> (derecha).
                     <br>
-                    <strong>Centrar:</strong> <code>.d-block</code> y <code>.mx-auto</code>.
+                    Centrar: <code>.d-block</code> y <code>.mx-auto</code>.
                 </dd>
 
                 <dt>Tablas (Base)</dt>
                 <dd>
                     <code>.table</code>: Es la clase base obligatoria para <code>&lt;table&gt;</code>.
                 </dd>
-                
+
                 <dt>Estilos de Tabla</dt>
                 <dd>
                     <code>.table-striped</code>: Filas con colores alternos.
@@ -304,16 +336,210 @@
                     <br>
                     <code>.table-sm</code>: Tabla más compacta.
                 </dd>
-                
+
                 <dt>Tablas Oscuras / Claras</dt>
                 <dd>
                     Bootstrap 5 adapta las tablas automáticamente al modo oscuro.
                     <code>.table-dark</code> sigue forzando el modo oscuro si fuera necesario.
                 </dd>
-                
+
                 <dt>Tablas Responsivas</dt>
                 <dd>
-                    <code>.table-responsive</code>: Se usa en un <code>&lt;div&gt;</code> que <strong>envuelve</strong> a la <code>&lt;table&gt;</code>. Añade scroll horizontal en pantallas pequeñas si la tabla no cabe.
+                    <code>.table-responsive</code>: Se usa en un <code>&lt;div&gt;</code> que envuelve
+                    a la <code>&lt;table&gt;</code>. Añade scroll horizontal en pantallas pequeñas si la tabla no cabe.
+                </dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section id="colores-fondos" class="pt-5 pb-4 mb-5">
+            <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">5. Colores y Fondos</h2>
+            <dl>
+                <dt>Colores Temáticos</dt>
+                <dd>
+                    Bootstrap utiliza nombres semánticos para los colores que pueden cambiar con el tema.
+                    <br>
+
+                    <ul>
+                        <li><code>primary</code> (Azul, principal)</li>
+                        <li><code>secondary</code> (Gris, secundario)</li>
+                        <li><code>success</code> (Verde, éxito)</li>
+                        <li><code>danger</code> (Rojo, peligro)</li>
+                        <li><code>warning</code> (Amarillo, advertencia)</li>
+                        <li><code>info</code> (Celeste, información)</li>
+                        <li><code>light</code> (Blanco/Gris claro)</li>
+                        <li><code>dark</code> (Negro/Gris oscuro)</li>
+                        <li><code>white</code> (Blanco puro)</li>
+                        <li><code>black</code> (Negro puro)</li>
+                    </ul>
+                </dd>
+
+                <dt>Clases de Texto (Text Colors)</dt>
+                <dd>
+                    Para cambiar el color de la fuente: <code>.text-{color}</code>.
+                    <br>
+                    Ejemplos: <code>.text-primary</code>, <code>.text-success</code>, <code>.text-white</code>,
+                    <code>.text-muted</code> (texto grisáceo).
+                    <pre><code>&lt;p class="text-danger"&gt;¡Cuidado!&lt;/p&gt;</code></pre>
+                </dd>
+
+                <dt>Clases de Fondo (Background Colors)</dt>
+                <dd>
+                    Para cambiar el color de fondo: <code>.bg-{color}</code>.
+                    <br>
+                    Ejemplos: <code>.bg-primary</code>, <code>.bg-dark</code>, <code>.bg-warning</code>.
+                    <pre><code>&lt;div class="p-3 bg-success text-white"&gt;Fondo Verde&lt;/div&gt;</code></pre>
+                </dd>
+
+                <dt>Opacidad del Fondo (Background Opacity)</dt>
+                <dd>
+                    Puedes controlar la opacidad del color de fondo con la utilidad
+                    <code>.bg-opacity-{porcentaje}</code>.
+                    <br>
+                    Porcentajes: <code>10</code>, <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>.
+                    <pre><code>&lt;div class="p-3 bg-primary bg-opacity-50"&gt;50% de Opacidad&lt;/div&gt;</code></pre>
+                </dd>
+
+                <dt>Modo de Color (Dark/Light Mode)</dt>
+                <dd>
+                    Bootstrap 5.3+ admite la personalización del modo de color con el atributo
+                    <code>data-bs-theme</code> en la etiqueta <code>&lt;html&gt;</code> o <code>&lt;body&gt;</code>.
+                    <br>
+                    <ul>
+                        <li>Modo Oscuro: <code>&lt;html data-bs-theme="dark"&gt;</code></li>
+                        <li>Modo Claro: <code>&lt;html data-bs-theme="light"&gt;</code></li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section id="botones-dropdowns" class="pt-5 pb-4 mb-5">
+            <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">4. Botones y Dropdowns</h2>
+            <dl>
+                <dt>Clase Base de Botón</dt>
+                <dd>
+                    Todos los botones deben llevar la clase base <code>.btn</code>.
+                    <pre><code>&lt;button class="btn"&gt;Botón Base&lt;/button&gt;</code></pre>
+                </dd>
+
+                <dt>Estilos de Botón</dt>
+                <dd>
+                    Define el color y estilo con <code>.btn-{color}</code>.
+                    <br>
+                    Ejemplos: <code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-link</code> (parece un
+                    enlace).
+                    <pre><code>&lt;a href="#" class="btn btn-warning"&gt;Alerta&lt;/a&gt;</code></pre>
+                </dd>
+
+                <dt>Botones de Contorno (Outline)</dt>
+                <dd>
+                    Botones transparentes con borde de color: <code>.btn-outline-{color}</code>.
+                    <br>
+                    Ejemplo: <code>.btn-outline-secondary</code>.
+                </dd>
+
+                <dt>Tamaño de Botón</dt>
+                <dd>
+                    Clases para cambiar el tamaño: <code>.btn-sm</code> (pequeño), <code>.btn-lg</code> (grande).
+                </dd>
+
+                <dt>Botones de Bloque (Full Width)</dt>
+                <dd>
+                    Para que un botón ocupe todo el ancho disponible, se usa una utilidad de Display Flex:
+                    <pre><code>&lt;div class="d-grid"&gt;
+    &lt;button class="btn btn-primary"&gt;Ocupar todo el ancho&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                </dd>
+
+                <dt>Estructura de Dropdown</dt>
+                <dd>
+                    Un menú desplegable. Se necesitan las clases <code>.dropdown</code> (en el contenedor padre),
+                    <code>.dropdown-toggle</code> (en el botón) y <code>.dropdown-menu</code> (en la lista).
+                    <ul>
+                        <li>Requiere el plugin JavaScript de Bootstrap para funcionar.</li>
+                        <li>El botón debe tener <code>data-bs-toggle="dropdown"</code>.</li>
+                    </ul>
+                    <pre><code>&lt;div class="dropdown"&gt;
+    &lt;button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"&gt;Menú&lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Opción 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Opción 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                </dd>
+
+                <dt>Elementos del Dropdown</dt>
+                <dd>
+                    Dentro de <code>.dropdown-menu</code>:
+                    <ul>
+                        <li><code>.dropdown-item</code>: Elemento normal.</li>
+                        <li><code>.dropdown-divider</code>: Línea de separación (etiqueta <code>&lt;hr&gt;</code>).</li>
+                        <li><code>.dropdown-header</code>: Título de sección (etiqueta <code>&lt;h6&gt;</code>).</li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <section id="navbars" class="pt-5 pb-4 mb-5">
+            <h2 class="display-5 border-bottom pb-2 mb-4 text-primary">5. Navbars (Barras de Navegación)</h2>
+            <dl>
+                <dt>Estructura Básica</dt>
+                <dd>
+                    La estructura estándar envuelve la navegación en la etiqueta <code>&lt;nav&gt;</code> con la clase
+                    <code>.navbar</code>, un contenedor <code>.container-fluid</code> y la lista de enlaces
+                    <code>.navbar-nav</code>.
+                    <pre><code>&lt;nav class="navbar navbar-expand-lg bg-dark"&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;a class="navbar-brand" href="#"&gt;Mi Marca&lt;/a&gt;
+        ... Menú ...
+    &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+                </dd>
+
+                <dt>Expansión (Breakpoints)</dt>
+                <dd>
+                    La clase <code>.navbar-expand-{breakpoint}</code> define a partir de qué tamaño la barra se colapsa
+                    en un botón de "hamburguesa".
+                    <ul>
+                        <li><code>.navbar-expand-lg</code>: Se colapsa en pantallas pequeñas y medianas, se expande a
+                            partir de `lg`.</li>
+                        <li><code>.navbar-expand-none</code>: Nunca se colapsa.</li>
+                    </ul>
+                </dd>
+
+                <dt>Clases de Color de Navbar</dt>
+                <dd>
+                    Define el color de fondo y el esquema de color del texto:
+                    <ul>
+                        <li>Fondo: <code>.bg-{color}</code> (ej. <code>.bg-primary</code>, <code>.bg-dark</code>).</li>
+                        <li>Tema: <code>.navbar-dark</code> (Texto claro para fondos oscuros) o
+                            <code>.navbar-light</code> (Texto oscuro para fondos claros).
+                        </li>
+                    </ul>
+                </dd>
+
+                <dt>Toggle (Botón de Menú Colapsado)</dt>
+                <dd>
+                    Es el botón de "hamburguesa" que aparece en pantallas pequeñas.
+                    <ul>
+                        <li>Clase: <code>.navbar-toggler</code>.</li>
+                        <li>Debe apuntar al contenido colapsable con <code>data-bs-target</code> (usando el ID del
+                            contenido).</li>
+                        <li>Icono: <code>&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;</code>.</li>
+                    </ul>
+                </dd>
+
+                <dt>Formularios y Búsqueda</dt>
+                <dd>
+                    Se pueden insertar formularios de búsqueda dentro de la navbar.
+                    <br>
+                    Clase: <code>.d-flex</code> (utilidad Flexbox para alinear elementos horizontalmente).
+                    <pre><code>&lt;form class="d-flex" role="search"&gt;...&lt;/form&gt;</code></pre>
                 </dd>
             </dl>
         </section>
@@ -321,9 +547,10 @@
     </main>
 
     <footer class="text-center text-body-secondary p-4 mt-5">
-        <p>Glosario modo oscuro (Estilo Sencillo)</p>
+        <p>Glosario Adrian Vincent</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
