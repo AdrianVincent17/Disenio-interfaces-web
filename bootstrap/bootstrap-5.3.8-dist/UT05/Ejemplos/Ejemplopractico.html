@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <!--
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    -->
+    <title>Inputs forumlarios</title>
+</head>
+
+<body class="container">
+    <div class="row">
+        <div class="col">
+            <form action="">
+                <div class="row mt-3">
+                    <div class="col-12 mb-3">
+                        <label for="user" class="col-form-label">Usuario</label>
+                        <input type="text" class="form-control" name="user" id="user"
+                            placeholder="Nombre de usuario"></input>
+
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="mail" class="col-form-label">Correo electronico</label>
+                        <input type="email" class="form-control" name="mail" id="mail" placeholder="E-mail..."></input>
+
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="comment" class="col-form-label">Comentarios</label>
+                        <textarea rows="5" class="form-control" name="comment" id="comment"
+                            placeholder="Escribe tus comentarios..."></textarea>
+
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="lista" class="form-label">Nacionalidad:</label>
+                        <select name="lista" id="lista" class="form-select">
+                            <option value="española">Española</option>
+                            <option value="alemana">Alemana</option>
+                            <option value="italiana">Italiana</option>
+                            <option value="otra">Otra</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="mb-3 form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="genero" id="genero" value="">
+                    <label for="genero" class="form-check-label">Hombre</label>
+
+
+
+                </div>
+
+                <div class="mb-3 form-check form-check-inline">
+
+                    <input type="radio" class="form-check-input" name="genero" id="genero" value="">
+                    <label for="genero" class="form-check-label">Mujer</label>
+                </div>
+
+
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="condiciones" value="">
+                    <label for="condiciones" class="form-check-label">Acepto condiciones y termninos de uso</label>
+
+
+                </div>
+
+                <div class="d-grid col-6 mx-auto">
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+
+
+        </div>
+
+        </form>
+
+    </div>
+
+    </div>
+
+</body>
+
+</html>

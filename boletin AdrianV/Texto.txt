@@ -1,0 +1,10 @@
+Diseño Responsive
+
+Observa que al cambiar las dimensiones del navegador, las fotografías cambian su posición. Debes distinguir entre resoluciones de pantalla:
+
+Small o extra-small
+Medium
+Large o extra-large
+Observa también cómo va cambiando la alineación del texto del pie de página, y cómo desaparece para resoluciones de pantalla small o extra-small.
+
+Debes copiar este texto.
