@@ -15,31 +15,42 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <script src="./js/bootstrap.bundle.min.js"></script>
     -->
-    <title>Ejemplo Columnas 02</title>
+    <title>Ejemplo offset 3
+        
+    </title>
     <style type="text/css">
-        .row>div {
+        .row {
 
-            background-color: #e2e2e2;
-            border: 1px solid #080808;
-            margin: 5px 0;
+            background: #e8e8e8;
+
+            margin-top: 40px;
+        }
+
+        .columna {
+            background: #f2f2f2;
+            padding: 10px;
             text-align: center;
+            border: 1px solid #4d5061;
+
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-8">Columna 1</div>
-            <div class="col-6 col-md-4 ">Columna 2</div>
-        </div>
-        <div class="row">
-            <div class="col-6 col-sm-4">Columna 3</div>
-            <div class="col-6 col-sm-4">Columna 4</div>
-            <div class="col-6 col-sm-4">Columna 5</div>
-        </div>
-    </div>
 
+        <div class="row">
+            <div class="columna col-md-4 offset-md-1 col-sm-4 offset-sm-0">Columna 1</div>
+            <div class="columna col-md-4 offset-md-2 col-sm-4 offset-sm-1">Columna 2</div>
+       
+        </div>
+
+    
+
+
+
+
+    </div>
 
 
 </body>

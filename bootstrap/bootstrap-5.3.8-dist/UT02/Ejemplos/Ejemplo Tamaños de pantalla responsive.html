@@ -13,21 +13,21 @@
         .row{
             background-color: #e2e2e2;
             border: 1px solid #808080;
-            margin-top:  5px 0;
+            margin:  5px 0;
             text-align: center;
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-6 col-sm-3 ">Columna 1</div>
-            <div class="col-6 col-sm-3">Columna 2</div>
-            <div class="w-100 d-none d-md-block"></div>
-            <div class="col-6 col-sm-3 ">Columna 3</div>
-            <div class="col-6 col-sm-3 ">Columna 4</div>
-           
+            <div class="col d-block d-sm-none">Pantalla de tamaño extra pequeño (xs)</div>
+            <div class="col d-none d-sm-block d-md-none">Pantalla de tamaño pequeño (s)</div>
+            <div class="col d-none d-md-block d-lg-none">Pantalla de tamaño mediano (md)</div>
+            <div class="col d-none d-lg-block d-xl-none">Pantalla de tamaño grande (lg)</div>
+            <div class="col d-none d-xl-block d-xxl-none">Pantalla de tamaño extra grande(xl)</div>
+            <div class="col d-none d-xxl-block">Pantalla de tamaño extra extra grande (xll)</div>
 
         </div>
 

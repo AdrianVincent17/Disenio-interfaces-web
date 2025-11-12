@@ -10,80 +10,98 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <title>Glosario Bootstrap</title>
-    <style>
-        .example-container {
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #f1f1f1;
-            /* Fondo de color para mejor visualización */
-        }
+   <style>
+  body {
+    background-color: #f8f9fa; /* gris muy claro */
+    color: #212529; /* texto oscuro */
+  }
 
-        .code-section {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
+  .example-container {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* blanco */
+    color: #212529;
+  }
 
-        .nav-section {
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 10px 0;
-            border-bottom: 1px solid #dee2e6;
-            margin-bottom: 20px;
-        }
+  .code-section {
+    background-color: #e9ecef; /* gris claro */
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: #0d1117; /* texto negro azulado */
+  }
 
-        pre code {
-            display: block;
-            padding: 1rem;
-            color: #212529;
-            background-color: #f8f9fa;
-            border-radius: 0.25rem;
-            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.875em;
-            white-space: pre-wrap;
-            word-break: break-all;
-            word-wrap: break-word;
-        }
+  .nav-section {
+    position: sticky;
+    top: 0;
+    background: #0d6efd; /* azul Bootstrap */
+    padding: 10px 0;
+    border-bottom: 1px solid #0a58ca;
+    margin-bottom: 20px;
+  }
 
-        .example-title {
-            background-color: #e9ecef;
-            /* Fondo de color para los títulos de ejemplos */
-            padding: 10px;
-            border-radius: 4px;
-        }
+  .nav-section a {
+    color: white !important;
+    font-weight: 500;
+  }
 
-        section {
-            background-color: #f9f9f9;
-            /* Fondo para las secciones */
-            max-width: 1500px;
-            /* Ancho ampliado */
-            margin: 0 auto;
-            padding: 20px;
-        }
+  .nav-section a:hover {
+    background-color: #0a58ca !important;
+    color: #fff !important;
+  }
 
-        pre {
-            position: relative;
-        }
+  pre code {
+    display: block;
+    padding: 1rem;
+    background-color: #212529; /* fondo oscuro */
+    border-radius: 0.25rem;
+    color: #f8f9fa; /* texto claro */
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 0.875em;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
 
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            /* Ajuste de posición para evitar superposición */
-            background: #007bff;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            z-index: 1;
-            /* Asegura que el botón esté por encima del código */
-        }
+  .example-title {
+    background-color: #0d6efd;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  section {
+    background-color: #ffffff;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #212529;
+  }
+
+  pre {
+    position: relative;
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 1;
+  }
+
+  .copy-button:hover {
+    background-color: #0a58ca;
+  }
+</style>
     </style>
 </head>
 
@@ -4611,7 +4629,7 @@
             <div class="card" style="width: 300px;">
                 <img class="card-img-top" src="../fotos/images/user-5.jpg" alt="Programador Web">
                 <div class="card-body text-center">
-                    <h4 class="card-title">Antonio González</h4>
+                    <h4 class="card-title">Adrian Vincent</h4>
                     <p class="card-text">Programador web. Experto en HTML, CSS, JavaScript y Bootstrap.</p>
                     <a href="#" class="btn btn-primary">Ver perfil</a>
                 </div>
