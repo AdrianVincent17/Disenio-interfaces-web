@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adrián Vincent Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        /* CSS PERSONALIZADO MÍNIMO PARA AJUSTAR EL DISEÑO */
+        
+        html {
+            scroll-behavior: smooth; /* Desplazamiento suave */
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: #0a0a0a; /* Un negro no tan puro, más elegante */
+            font-family: system-ui, -apple-system, sans-serif; /* Fuente limpia del sistema */
+        }
+
+        /* Navegación transparente con efecto blur (vidrio) */
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Estilo de las Tarjetas (Proyectos) */
+        .card-project {
+            border: 1px solid rgba(255,255,255,0.1); /* Borde muy sutil */
+            background-color: #111;
+            transition: all 0.3s ease;
+        }
+        .card-project:hover {
+            border-color: #fff; /* Al pasar el ratón, el borde se ilumina */
+            transform: translateY(-5px);
+        }
+
+        /* Botones estilo "Designer" (Blancos y negros) */
+        .btn-white {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #fff;
+            font-weight: 600;
+        }
+        .btn-white:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+        
+        .btn-outline-white {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+        }
+        .btn-outline-white:hover {
+            border-color: #fff;
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Ajuste de imágenes */
+        .img-cover {
+            object-fit: cover;
+            height: 250px;
+            width: 100%;
+            filter: grayscale(100%); /* Las hace blanco y negro (opcional) */
+            transition: filter 0.3s;
+        }
+        .card-project:hover .img-cover {
+            filter: grayscale(0%); /* Vuelven a color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+
+ <header>
+        <nav class="navbar fixed-top navbar-dark navbar-expand-sm justify-content-between p-2 ">
+            <div class="container-fluid">
+
+                <!-- logo  -->
+                <a href="#"><img class="navbar-brand img-fluid" src="img/logocabecera.webp" alt="LogoAV"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hamburguesa">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- contendido del nav -->
+                <div class="collapse navbar-collapse" id="hamburguesa">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link me-3" href="#inicio">INCIO</a></li>
+                        <li class="nav-item"><a class="nav-link me-3" href="#sobremi">SOBRE MI</a></li>
+                        <li class="nav-item"><a class="nav-link me-3" href="#proyectos">PROYECTOS</a></li>
+                        <li class="nav-item"><a class="nav-link " href="#contacto">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="d-flex align-items-center min-vh-100 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="text-secondary mb-4 text-uppercase small spacing-2">Desarrollador & Diseñador Web</p>
+                    <h1 class="display-1 fw-bold text-white mb-4" style="letter-spacing: -2px;">
+                        Creo productos digitales<br>
+                        <span class="text-secondary">con sentido y estrategia.</span>
+                    </h1>
+                    <p class="lead text-secondary mb-5 w-75">
+                        Ayudo a marcas a diferenciarse en un mundo ruidoso. Diseño limpio, código eficiente y enfoque en resultados.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-white px-4 py-3 rounded-pill">Empezar proyecto</a>
+                        <a href="#work" class="btn btn-outline-white px-4 py-3 rounded-pill">Ver portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="work" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <h2 class="h1 fw-bold m-0">Trabajos seleccionados</h2>
+                <a href="#" class="text-white text-decoration-none small">Ver todo &rarr;</a>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card card-project h-100 border-0 overflow-hidden rounded-4">
+                        <img src="https://placehold.co/600x400/222/FFF?text=Proyecto+Ecommerce" class="img-cover" alt="Proyecto 1">
+                        <div class="card-body p-4">
+                            <span class="badge border border-secondary text-secondary fw-normal mb-2 rounded-pill">Ecommerce</span>
+                            <h3 class="h4 card-title text-white">Tienda Minimalista</h3>
+                            <p class="card-text text-secondary">Rediseño completo de experiencia de usuario incrementando ventas un 40%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-project h-100 border-0 overflow-hidden rounded-4">
+                        <img src="https://placehold.co/600x400/222/FFF?text=App+Financiera" class="img-cover" alt="Proyecto 2">
+                        <div class="card-body p-4">
+                            <span class="badge border border-secondary text-secondary fw-normal mb-2 rounded-pill">App Design</span>
+                            <h3 class="h4 card-title text-white">Dashboard Financiero</h3>
+                            <p class="card-text text-secondary">Interfaz compleja simplificada para usuarios no técnicos.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card card-project h-100 border-0 overflow-hidden rounded-4">
+                        <img src="https://placehold.co/600x400/222/FFF?text=Landing+Page" class="img-cover" alt="Proyecto 3">
+                        <div class="card-body p-4">
+                            <span class="badge border border-secondary text-secondary fw-normal mb-2 rounded-pill">Landing Page</span>
+                            <h3 class="h4 card-title text-white">Campaña Startup</h3>
+                            <p class="card-text text-secondary">Diseño de alto impacto para captación de leads.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-project h-100 border-0 overflow-hidden rounded-4">
+                        <div class="card-body p-5 d-flex flex-column justify-content-center align-items-center text-center bg-secondary bg-opacity-10">
+                            <h3 class="h2 text-white">¿Tu proyecto aquí?</h3>
+                            <p class="text-secondary mb-4">Estoy disponible para nuevos retos este mes.</p>
+                            <a href="#contact" class="btn btn-outline-white rounded-pill">Contactar ahora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2 class="h1 fw-bold mb-4">Lo que hago</h2>
+                </div>
+                <div class="col-lg-8">
+                    <div class="border-top border-secondary border-opacity-25 py-4 d-flex justify-content-between align-items-center">
+                        <h3 class="h4 m-0">Diseño Web / UI</h3>
+                        <span class="text-secondary"><i class="bi bi-plus-lg"></i></span>
+                    </div>
+                    <div class="border-top border-secondary border-opacity-25 py-4 d-flex justify-content-between align-items-center">
+                        <h3 class="h4 m-0">Desarrollo Frontend</h3>
+                        <span class="text-secondary"><i class="bi bi-plus-lg"></i></span>
+                    </div>
+                    <div class="border-top border-bottom border-secondary border-opacity-25 py-4 d-flex justify-content-between align-items-center">
+                        <h3 class="h4 m-0">Optimización Web (SEO)</h3>
+                        <span class="text-secondary"><i class="bi bi-plus-lg"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 mb-5">
+        <div class="container pt-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="display-2 fw-bold mb-4">Trabajemos juntos.</h2>
+                    <p class="lead text-secondary mb-5">Envíame un detalle breve de tu proyecto y te responderé con una propuesta.</p>
+                    <a href="mailto:hola@tucorreo.com" class="btn btn-white btn-lg rounded-pill px-5 py-3 fw-bold">
+                        hola@tucorreo.com
+                    </a>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center text-secondary border-top border-secondary border-opacity-10 small">
+        <div class="mt-5 d-flex justify-content-center gap-4">
+                        <a href="#" class="text-secondary hover-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary hover-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary hover-white fs-5"><i class="bi bi-instagram"></i></a>
+                    </div>
+        <div class="container">
+            © 2024 Tu Nombre. Hecho con Bootstrap.
+        </div>
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
