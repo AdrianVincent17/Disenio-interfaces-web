@@ -1,120 +1,112 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url("img/fondo.webp"); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(45, 0, 87);
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-
-
-.titulo-inicio {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva';
-    text-shadow: 3px 3px 10px black;
-}
-
-.nav-link {
-    color: rgb(230, 230, 230);
-    transition: 0.3s ease-out;
-}
-
-.nav-link:hover {
-    color: rgb(255, 255, 255);
-    transform: scale(1.2);
-}
-
-.imagencabecera {
-    box-shadow: 2px 2px 20px white;
-    border: none;
-    transition: 0.3s ease;
-}
-
-.imagencabecera:hover {
-    transition: 0.3 ease-in-out;
-    transform: scale(1.05);
-}
-
-.iconos-redes {
-    color: lightgrey;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-.iconos-redes:hover {
-    color: rgb(12, 171, 115);
-
-}
-
-footer {
-    text-decoration: none;
-    color: white;
-}
-
-input {
-    height: 120px;
-    margin-bottom: 10px;
-}
-
-.form-control:focus {
-    border-color: blueviolet;
-    box-shadow: 0px 0px 35px 3px blueviolet;
-}
-
-textarea {
-    height: 250px;
-}
-
-.encontrarme {
-    color: rgb(115, 255, 0);
-}
-
-.btn {
-    background-color: transparent;
-    box-shadow: 0px 0px 15px 3px white;
-    border: none;
-    border-radius: 25px;
-}
-
-.btn:hover {
-    background-color: rgba(0, 255, 166, 0.403);
-    color: white;
-}
-
-.carousel {
-    box-shadow: 0px 0px 15px 3px white;
-    border: none;
-    margin-bottom: 50px;
-}
-
-.carousel-item {
-    border-radius: 25px;
-    border: none;
-}
-
-.contacto {
-    background-image: url("img/catedral.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(45, 0, 87);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 header {
-
-    background-color: transparent; 
+  background-color: transparent;
 }
 
+.nav-link {
+  color: rgb(230, 230, 230);
+  transition: all 0.3s ease-out;
+}
+.nav-link:hover {
+  color: white;
+  transform: scale(1.2);
+}
 
 .inicio {
-    background-color: rgba(0, 0, 0, 0.322);
-    background-image: url("img/AVheader.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 750px;
-    background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.355);
+  background-image: url("img/AVheader.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  background-blend-mode: darken;
 }
+
+.titulo-inicio {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva";
+  text-shadow: 3px 3px 10px black;
+}
+
+.imagencabecera {
+  box-shadow: 2px 2px 20px white;
+  border: none;
+  transition: transform 0.3s ease;
+}
+.imagencabecera:hover {
+  transform: scale(1.05);
+}
+
+.iconos-redes {
+  color: lightgrey;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 25px;
+}
+.iconos-redes:hover {
+  color: rgb(12, 171, 115);
+}
+
+footer {
+  text-decoration: none;
+  color: white;
+}
+
+input {
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 250px;
+}
+
+.form-control:focus {
+  border-color: blueviolet;
+  box-shadow: 0px 0px 35px 3px blueviolet;
+  border: none;
+}
+
+.encontrarme {
+  color: rgb(115, 255, 0);
+}
+
+.btn {
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 3px white;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: rgba(0, 255, 166, 0.403);
+  color: white;
+}
+
+.carousel {
+  box-shadow: 0px 0px 15px 3px white;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.carousel-item {
+  border-radius: 25px;
+  border: none;
+}
+
+.contacto {
+  background-image: url("img/catedral.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,243 @@
+// ============================================
+// VARIABLES
+// ============================================
+
+// Colores
+$color-primario: rgb(45, 0, 87);
+$color-secundario: rgba(0, 255, 166, 0.403);
+$color-acento: rgb(12, 171, 115);
+$color-acento-verde: rgb(115, 255, 0);
+$color-blanco: white;
+$color-gris-claro: lightgrey;
+$color-texto-claro: rgb(230, 230, 230);
+$color-negro-overlay: rgba(0, 0, 0, 0.355);
+$color-violeta: blueviolet;
+
+// Fuentes
+$fuente-principal: Arial, Helvetica, sans-serif;
+$fuente-titulo: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva';
+
+// Tiempos de transición
+$transicion-rapida: 0.3s;
+
+// Espaciados
+$espaciado-pequeno: 10px;
+$espaciado-medio: 25px;
+$espaciado-grande: 50px;
+
+// Sombras
+$sombra-texto: 3px 3px 10px black;
+$sombra-imagen: 2px 2px 20px $color-blanco;
+$sombra-caja-blanca: 0px 0px 15px 3px $color-blanco;
+$sombra-caja-violeta: 0px 0px 35px 3px $color-violeta;
+
+// Tamaños
+$altura-input: 120px;
+$altura-textarea: 250px;
+$altura-contacto: 500px;
+$altura-inicio: 750px;
+$icono-tamano: 25px;
+
+// Bordes
+$radio-borde: 25px;
+
+// ============================================
+// FUNCIONES
+// ============================================
+
+// Función para crear rgba desde rgb
+@function crear-rgba($color, $alpha) {
+    @return rgba($color, $alpha);
+}
+
+// Función para calcular escala
+@function escala($factor) {
+    @return scale($factor);
+}
+
+// ============================================
+// MIXINS
+// ============================================
+
+// Mixin para transiciones
+@mixin transicion($propiedad: all, $duracion: $transicion-rapida, $tipo: ease) {
+    transition: $propiedad $duracion $tipo;
+}
+
+// Mixin para sombra de caja
+@mixin sombra-caja($sombra) {
+    box-shadow: $sombra;
+    border: none;
+}
+
+// Mixin para imágenes de fondo
+@mixin fondo-imagen($url, $posicion: center, $repetir: no-repeat, $tamano: cover) {
+    background-image: url($url);
+    background-position: $posicion;
+    background-repeat: $repetir;
+    background-size: $tamano;
+}
+
+// Mixin para efectos hover con escala
+@mixin hover-escala($escala: 1.05, $duracion: $transicion-rapida) {
+    @include transicion(transform, $duracion);
+    
+    &:hover {
+        transform: scale($escala);
+    }
+}
+
+// Mixin para centrado flex
+@mixin flex-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin para botones
+@mixin boton-base {
+    background-color: transparent;
+    @include sombra-caja($sombra-caja-blanca);
+    border-radius: $radio-borde;
+    @include transicion;
+    
+    &:hover {
+        background-color: $color-secundario;
+        color: $color-blanco;
+    }
+}
+
+// ============================================
+// ESTILOS GLOBALES
+// ============================================
+
+body {
+    font-family: $fuente-principal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $color-primario;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+// ============================================
+// HEADER Y NAVEGACIÓN
+// ============================================
+
+header {
+    background-color: transparent;
+}
+
+.nav-link {
+    color: $color-texto-claro;
+    @include transicion(all, $transicion-rapida, ease-out);
+    
+    &:hover {
+        color: $color-blanco;
+        transform: scale(1.2);
+    }
+}
+
+// ============================================
+// SECCIÓN INICIO
+// ============================================
+
+.inicio {
+    background-color: $color-negro-overlay;
+    @include fondo-imagen("img/AVheader.webp");
+    height: $altura-inicio;
+    background-blend-mode: darken;
+}
+
+.titulo-inicio {
+    font-family: $fuente-titulo;
+    text-shadow: $sombra-texto;
+}
+
+// ============================================
+// IMÁGENES
+// ============================================
+
+.imagencabecera {
+    @include sombra-caja($sombra-imagen);
+    @include hover-escala;
+}
+
+// ============================================
+// ICONOS REDES SOCIALES
+// ============================================
+
+.iconos-redes {
+    color: $color-gris-claro;
+    @include transicion(color);
+    text-decoration: none;
+    font-size: $icono-tamano;
+    
+    &:hover {
+        color: $color-acento;
+    }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+
+footer {
+    text-decoration: none;
+    color: $color-blanco;
+}
+
+// ============================================
+// FORMULARIOS
+// ============================================
+
+input {
+    height: $altura-input;
+    margin-bottom: $espaciado-pequeno;
+}
+
+textarea {
+    height: $altura-textarea;
+}
+
+.form-control:focus {
+    border-color: $color-violeta;
+    @include sombra-caja($sombra-caja-violeta);
+}
+
+.encontrarme {
+    color: $color-acento-verde;
+}
+
+// ============================================
+// BOTONES
+// ============================================
+
+.btn {
+    @include boton-base;
+}
+
+// ============================================
+// CARRUSEL
+// ============================================
+
+.carousel {
+    @include sombra-caja($sombra-caja-blanca);
+    margin-bottom: $espaciado-grande;
+}
+
+.carousel-item {
+    border-radius: $radio-borde;
+    border: none;
+}
+
+// ============================================
+// SECCIÓN CONTACTO
+// ============================================
+
+.contacto {
+    @include fondo-imagen("img/catedral.jpg");
+    height: $altura-contacto;
+}
