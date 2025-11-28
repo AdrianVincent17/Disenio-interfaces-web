@@ -1,0 +1,162 @@
+// ------------------------------
+// VARIABLES
+// ------------------------------
+$colorPrimario: rgb(249, 215, 255);
+$colorSecundario: rgb(124, 70, 138);
+$hoverNav: rgb(144, 0, 255);
+$hoverIconosRedes: rgb(236, 255, 142);
+$sombrasBoton: 0px 0px 15px 3px rgb(0, 0, 0);
+$colorcontacto: rgb(255, 111, 0) ;
+$colorhamburguesa: white;
+$sombraTitulos: 3px 3px 10px black;
+
+// ------------------------------
+// FUNCIONES
+// ------------------------------
+// Función para generar un color y oscurecerlos para un fondo
+@function oscurecerfondo($color, $oscurecimiento) {
+    @return rgba(0, 0, 0, $oscurecimiento);
+}
+
+// ------------------------------
+// MIXINS
+// ------------------------------
+// Mixin con varios elementos para centrar el fondo
+@mixin fondocentrado {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// ------------------------------
+// ESTILOS BASE
+// ------------------------------
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    @include fondocentrado(); // Uso del mixin
+    background-color: $colorPrimario; // Uso de la variable
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-color: transparent;
+}
+
+footer {
+    text-decoration: none;
+    color: white;
+}
+
+// ------------------------------
+// COMPONENTES
+// ------------------------------
+
+.nav-link {
+    color: $colorSecundario;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        color: $hoverNav;
+        transform: scale(1.2);
+    }
+}
+
+.inicio {
+    background-image: url("../img/AVheader.webp");
+    background-color: oscurecerfondo(black, 0.355); // Uso de la función
+    @include fondocentrado(); // Uso del mixin
+    height: 750px;
+}
+
+.titulo-inicio {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva";
+    text-shadow: $sombraTitulos;
+}
+
+.imagencabecera {
+    box-shadow: $sombrasBoton;
+    border: none;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.iconos-redes {
+    color: $colorSecundario;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 25px;
+
+    &:hover {
+        color: $hoverIconosRedes; // Uso de la variable
+    }
+}
+
+input {
+    height: 120px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    height: 250px;
+}
+
+.form-control:focus {
+    border-color: blueviolet;
+    box-shadow: 0px 0px 35px 3px blueviolet; 
+    border: none;
+}
+
+.encontrarme {
+    color: $colorcontacto;
+}
+
+.btn {
+    background-color: transparent;
+    box-shadow: $sombrasBoton; // Uso de la variable
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    color: $colorSecundario;
+
+    &:hover {
+        background-color: $hoverNav;
+        color: $colorPrimario;
+    }
+}
+
+.carousel {
+    box-shadow: $sombrasBoton; // Uso de la variable
+    border: none;
+    margin-bottom: 50px;
+}
+
+.carousel-item {
+    border-radius: 25px;
+    border: none;
+}
+
+.titulos{
+  color: $colorSecundario;
+  text-shadow: $sombraTitulos;
+}
+
+.texto{
+  color: $colorSecundario;
+}
+
+.contacto {
+    background-image: url("../img/catedral.jpg");
+    @include fondocentrado(); // Uso del mixin
+    height: 500px;
+}
+
+.iconohamburguesa {   
+    color: $colorSecundario; 
+    font-size: 1.8rem; 
+}

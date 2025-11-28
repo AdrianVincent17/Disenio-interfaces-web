@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link id="tema" rel="stylesheet" href="./css/estilos.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico"> <!-- FAVICON (CASI NO SE VE... LO SE)--> 
     <title>Porfolio - AdrianVincent Desarrollador Full Stack</title>
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-dark navbar-expand-sm ps-4 pe-5">
-            <!-- logo  -->
-            <a href="#"><img class="navbar-brand img-fluid" src="img/logocabecera.webp" alt="LogoAV"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hamburguesa">
-                <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-dark navbar-expand-md ps-4 pe-4">
+            <!-- LOGO  -->
+            <a href="#"><img class="navbar-brand img-fluid" src="./img/logocabecera.webp" alt="LogoAV" id="logo"></a>
+            <button class="navbar-toggler justify-content-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#hamburguesa">
+                <i class="bi bi-list iconohamburguesa"></i>
             </button>
-            <!-- contendido del nav -->
+            <!-- CONTENIDO DEL NAV -->
             <div class="collapse navbar-collapse" id="hamburguesa">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">INCIO</a></li>
+                    <li class="nav-item"><a class="nav-link ps-3" href="#inicio">INCIO</a></li>
                     <li class="nav-item"><a class="nav-link ps-3" href="#sobremi">SOBRE MI</a></li>
                     <li class="nav-item"><a class="nav-link ps-3" href="#proyectos">PROYECTOS</a></li>
                     <li class="nav-item"><a class="nav-link ps-3 pe-2" href="#contacto">CONTACTO</a></li>
                 </ul>
+                <!-- BOTON CAMBIAR DE COLORES -->
+                <button onclick="cambiarcolores()" class="btn btn-outline-light bi bi-palette ms-3"
+                    id="cambiarcolores"></button>
             </div>
+
         </nav>
     </header>
     <section class="container-fluid">
+        <!-- TITULO CABECERA -->
         <article id="inicio" class="inicio row justify-content-center align-items-center">
             <div class="col-12 text-center">
                 <h2 class="titulo-inicio display-3 text-center text-white fw-lighter">
@@ -43,43 +51,44 @@
         </article>
     </section>
     <section class="container">
+
+        <!-- SECCION SOBRE MI -->
         <article id="sobremi" class="row justify-content-center align-items-center">
             <div class="col-lg-12 mt-5 text-center text-white">
-                <h1 class="display-2">SOBRE MI</h1>
-                <p class="mb-5">Soy Adrián Vicente, un profesional creativo y entusiasta de la informática,
+                <h1 class="display-2 titulos">SOBRE MI</h1>
+                <p class="mb-5 texto">Soy Adrián Vicente, un profesional creativo y entusiasta de la informática,
                     especializado en
                     desarrollo de software y diseño web</p>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-12 col-md-6 order-last order-md-0 pt-4">
-                        <h3 class="display-5">OBJETIVO</h3>
-                        <P>Seguir explorando nuevas tecnologías y crear soluciones innovadoras a través de
+                        <h3 class="display-5 titulos">OBJETIVO</h3>
+                        <P class="texto">Seguir explorando nuevas tecnologías y crear soluciones innovadoras a través de
                             proyectos de desarrollo de software.</P>
-                        <h3 class="display-5">VALORES</h3>
-                        <P>Valoro la lealtad, la resiliencia y la perseverancia. Siempre procuro reflexionar
+                        <h3 class="display-5 titulos">VALORES</h3>
+                        <P class="texto">Valoro la lealtad, la resiliencia y la perseverancia. Siempre procuro
+                            reflexionar
                             sobre mi desempeño para mejorar continuamente.</P>
                     </div>
                     <div class="col-12 col-md-6">
-                        <img src="img/adrianvincent.webp" alt="sobremi" class="img-fluid imagencabecera rounded-5 w-75">
+                        <img src="./img/adrianvincent.webp" alt="sobremi" class="img-fluid imagencabecera rounded-5 w-75">
                     </div>
                 </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-4">
-                        <img src="img/adrianvincent1.webp" alt="sobremi"
+                        <img src="./img/adrianvincent1.webp" alt="sobremi"
                             class="img-fluid imagencabecera rounded-5 w-100">
                     </div>
                     <div class="col-6">
-                        <h3 class="display-4 mb-5 fw-lighter">¿Te gustaría hacer equipo conmigo?</h3>
+                        <h3 class="display-4 mb-5 fw-lighter texto">¿Te gustaría hacer equipo conmigo?</h3>
                         <button class="btn btn-lg btn-outline-light ms-5" data-bs-target="#micv"
                             data-bs-toggle="modal">VER MI CV</button>
-                        <!-- Ventana Modal -->
-                        <div class="modal fade" id="micv">
+
+                        <!-- VENTANA MODAL -->
+                        <div class="modal modal-lg fade" id="micv">
                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                 <div class="modal-content">
-                                    <!-- Modal header -->
-                                    <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <!-- Modal body -->
+
+                                    <!-- CUERPO DEL MODAL -->
                                     <div class="modal-body">
                                         <img src="img/CVAV.png" class="img-fluid" alt="cv">
                                     </div>
@@ -94,10 +103,10 @@
     <section class="container">
         <article id="proyectos" class="row justify-content-center items-align-center">
             <div class="col-lg-8 mt-5 text-center text-white">
-                <h1 class="display-2 mb-5 fw-lighter">PROYECTOS</h1>
+                <h1 class="display-2 mb-5 fw-lighter titulos">PROYECTOS</h1>
                 <div id="carrusel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-                    <!-- The slideshow/carousel -->
+                    <!-- IMAGENES CARRUSEL -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="img/calculadora.webp" alt="calculadora"
@@ -122,7 +131,7 @@
                         </div>
                     </div>
 
-                    <!-- controles de izquierda derecha/puntos -->
+                    <!-- CONTROLES IZQ/DER PUNTOS -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
@@ -130,7 +139,7 @@
                         <span class="carousel-control-next-icon"></span>
                     </button>
 
-                    <!-- indicadores/puntos -->
+                    <!-- INDICADORES PUNTOS -->
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active"></button>
                         <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1"></button>
@@ -141,32 +150,35 @@
         </article>
     </section>
     <section class="container-fluid">
-    <article id="contacto" class="row justify-content-center g-4">
-        
+        <article id="contacto" class="row justify-content-center g-4">
+
             <div
                 class="contacto col-lg-12 mt-5 align-items-center d-flex justify-content-center text-center text-white">
                 <h1 class="display-3 fw-ligther">CONTACTO</h1>
 
             </div>
+
+            <!-- SECCION DONDE ENCONTRARME -->
+
             <div class="col-12 col-md-6 mt-5 text-center text-white g-4">
-                <h1 class="display-6 mb-4">DONDE PUEDES ENCONTRARME</h1>
+                <h1 class="display-6 mb-4 titulos">DONDE PUEDES ENCONTRARME</h1>
                 <div class="mt-5 mb-5 pb-2 pt-2">
                     <h4 class="encontrarme">
                         CORREO ELECTRÓNICO
                     </h4>
-                    <p>ADRIANVINCENT17@GMAIL.COM</p>
+                    <p class="texto">ADRIANVINCENT17@GMAIL.COM</p>
                 </div>
                 <div class="mt-5 mb-5 pb-2">
                     <h4 class="encontrarme">
                         NÚMERO DE TELEFONO
                     </h4>
-                    <p>+34 685-24-74-80</p>
+                    <p class="texto">+34 685-24-74-80</p>
                 </div>
                 <div class="mt-5 mb-5 pb-2">
                     <h4 class="encontrarme">
                         LOCALIZACIÓN
                     </h4>
-                    <p>C/ ALBÉNIZ, MOLINA DE SEGURA, MURCIA</p>
+                    <p class="texto">C/ ALBÉNIZ, MOLINA DE SEGURA, MURCIA</p>
                 </div>
                 <div class="d-flex justify-content-center gap-4">
                     <a href="#" class="iconos-redes"><i class="bi bi-facebook"></i></a>
@@ -175,9 +187,10 @@
                     <a href="#" class="iconos-redes"><i class="bi bi-github"></i></a>
                 </div>
             </div>
-            <!-- Formulario de contacto -->
+            <!-- FORMULARIO DE CONTACTO -->
+
             <div class="col-12 col-md-6 mt-5 text-center text-white">
-                <h1 class="display-6 text-center mb-5">ESTAMOS A UN MENSAJE DE DISTANCIA</h1>
+                <h1 class="display-6 text-center mb-5 titulos">ESTAMOS A UN MENSAJE DE DISTANCIA</h1>
 
                 <form action="" class="row">
                     <div class="col-12 ps-4 pe-4 mb-2">
@@ -193,7 +206,7 @@
                     <div class="w-100"></div>
                     <div class="col-auto mx-auto pt-2 pb-5 ps-4">
                         <input type="checkbox" class="form-check-input" id="aceptar">
-                        <label for="aceptar" class="form-check-label">Acepto condiciones y términos de
+                        <label for="aceptar" class="form-check-label texto">Acepto condiciones y términos de
                             uso</label>
                     </div>
                     <div class="w-100"></div>
@@ -202,9 +215,15 @@
                     </div>
                 </form>
             </div>
-    </article>
+        </article>
     </section>
+
+    <!-- FOOTER -->
+
     <footer class="text-center text-secondary mt-5">
+
+        <!-- NAV DEL PRINCIPIO -->
+
         <div class="row justify-content-around align-items-center">
             <div class="col-sm-12 d-md-block mt-sm-2 mb-sm-2 col-lg-4">
                 <ul class="nav navbar-expand text-center justify-content-center">
@@ -215,8 +234,11 @@
                 </ul>
             </div>
             <div class="col-sm-12 mt-sm-2 mb-sm-2 col-lg-4">
-                <a href="#"><img class="navbar-brand img-fluid" src="img/logocabecera.webp" alt="LogoAV"></a>
+                <a href="#"><img class="navbar-brand img-fluid" src="./img/logocabecera.webp" alt="LogoAV" id="logo2"></a>
             </div>
+
+            <!-- ICONOS REDES SOCIALES -->
+
             <div class="col-sm-12 mt-sm-2 mb-sm-2 col-lg-4">
                 <div class="d-flex justify-content-center gap-4">
                     <a href="#" class="iconos-redes"><i class="bi bi-facebook"></i></a>
@@ -226,12 +248,18 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-12 mt-4 small mb-4">
                 © 2025 ADRIANVINCENT.ES TODOS LOS DERECHOS RESERVADOS.
             </div>
         </div>
     </footer>
+
+    <!-- FUNCIONALIDADES JAVASCRIPT -->
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 
