@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link id="tema" rel="stylesheet" href="./css/estilos.css" type="text/css">
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico"> <!-- FAVICON (CASI NO SE VE... LO SE)--> 
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico"> <!-- FAVICON (CASI NO SE VE... LO SE)-->
     <title>Porfolio - AdrianVincent Desarrollador Full Stack</title>
 </head>
 
@@ -36,7 +36,8 @@
 
         </nav>
     </header>
-    <section class="container-fluid">
+    <section>
+
         <!-- TITULO CABECERA -->
         <article id="inicio" class="inicio row justify-content-center align-items-center">
             <div class="col-12 text-center">
@@ -50,44 +51,49 @@
             </div>
         </article>
     </section>
-    <section class="container">
+    <section class="container-fluid">
 
         <!-- SECCION SOBRE MI -->
         <article id="sobremi" class="row justify-content-center align-items-center">
             <div class="col-lg-12 mt-5 text-center text-white">
                 <h1 class="display-2 titulos">SOBRE MI</h1>
-                <p class="mb-5 texto">Soy Adrián Vicente, un profesional creativo y entusiasta de la informática,
+                <h4 class="mb-5 texto">Soy Adrián Vicente, un profesional creativo y entusiasta de la informática,
                     especializado en
-                    desarrollo de software y diseño web</p>
+                    desarrollo de software y diseño web</h4>
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-6 order-last order-md-0 pt-4">
+                    <div class="col-12 col-lg-4 order-last order-lg-0 pt-4">
                         <h3 class="display-5 titulos">OBJETIVO</h3>
-                        <P class="texto">Seguir explorando nuevas tecnologías y crear soluciones innovadoras a través de
-                            proyectos de desarrollo de software.</P>
+                        <h4 class="texto">Seguir explorando nuevas tecnologías y crear soluciones innovadoras a través de
+                            proyectos de desarrollo de software.</h4>
                         <h3 class="display-5 titulos">VALORES</h3>
-                        <P class="texto">Valoro la lealtad, la resiliencia y la perseverancia. Siempre procuro
+                        <h4 class="texto">Valoro la lealtad, la resiliencia y la perseverancia. Siempre procuro
                             reflexionar
-                            sobre mi desempeño para mejorar continuamente.</P>
+                            sobre mi desempeño para mejorar continuamente.</h4>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <img src="./img/adrianvincent.webp" alt="sobremi" class="img-fluid imagencabecera rounded-5 w-75">
+                    <div class="col-8 col-lg-5">
+                        <img src="./img/adrianvincent.webp" alt="sobremi"
+                            class="img-fluid imagencabecera rounded-5 w-75">
                     </div>
                 </div>
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-4">
+                <div class="row justify-content-center align-items-center pt-4">
+                    <div class="col-5">
                         <img src="./img/adrianvincent1.webp" alt="sobremi"
-                            class="img-fluid imagencabecera rounded-5 w-100">
+                            class="img-fluid imagencabecera rounded-5">
                     </div>
                     <div class="col-6">
-                        <h3 class="display-4 mb-5 fw-lighter texto">¿Te gustaría hacer equipo conmigo?</h3>
-                        <button class="btn btn-lg btn-outline-light ms-5" data-bs-target="#micv"
+                        <p class="display-6 mb-5 fs-2 texto">¿Te gustaría hacer equipo conmigo?</p>
+                        <button class="btn btn-lg btn-outline-light ms-2" data-bs-target="#micv"
                             data-bs-toggle="modal">VER MI CV</button>
 
                         <!-- VENTANA MODAL -->
                         <div class="modal modal-lg fade" id="micv">
+
                             <div class="modal-dialog modal-lg modal-dialog-centered">
                                 <div class="modal-content">
-
+                                    <!-- TITULO DEL MODAL -->
+                                    <div class="modal-header text-dark justify-content-center">
+                                        <h3>EXPERIENCIA PROFESIONAL</h3>
+                                    </div>
                                     <!-- CUERPO DEL MODAL -->
                                     <div class="modal-body">
                                         <img src="img/CVAV.png" class="img-fluid" alt="cv">
@@ -149,18 +155,18 @@
             </div>
         </article>
     </section>
-    <section class="container-fluid">
-        <article id="contacto" class="row justify-content-center g-4">
+    <section>
+        <article id="contacto" class="row justify-content-center">
 
             <div
-                class="contacto col-lg-12 mt-5 align-items-center d-flex justify-content-center text-center text-white">
+                class="contacto col-12 mt-5 align-items-center d-grid justify-content-center text-center text-white">
                 <h1 class="display-3 fw-ligther">CONTACTO</h1>
 
             </div>
 
             <!-- SECCION DONDE ENCONTRARME -->
 
-            <div class="col-12 col-md-6 mt-5 text-center text-white g-4">
+            <div class="col-12 col-md-6 mt-5 text-center text-white">
                 <h1 class="display-6 mb-4 titulos">DONDE PUEDES ENCONTRARME</h1>
                 <div class="mt-5 mb-5 pb-2 pt-2">
                     <h4 class="encontrarme">
@@ -224,8 +230,8 @@
 
         <!-- NAV DEL PRINCIPIO -->
 
-        <div class="row justify-content-around align-items-center">
-            <div class="col-sm-12 d-md-block mt-sm-2 mb-sm-2 col-lg-4">
+        <div class="row g-0 justify-content-around align-items-center">
+            <div class="col-sm-12 d-none d-sm-block mt-sm-2 mb-sm-2 col-lg-4">
                 <ul class="nav navbar-expand text-center justify-content-center">
                     <li class="nav-item"><a class="nav-link me-3" href="#inicio">INCIO</a></li>
                     <li class="nav-item"><a class="nav-link me-3" href="#sobremi">SOBRE MI</a></li>
@@ -234,7 +240,8 @@
                 </ul>
             </div>
             <div class="col-sm-12 mt-sm-2 mb-sm-2 col-lg-4">
-                <a href="#"><img class="navbar-brand img-fluid" src="./img/logocabecera.webp" alt="LogoAV" id="logo2"></a>
+                <a href="#"><img class="navbar-brand img-fluid" src="./img/logocabecera.webp" alt="LogoAV"
+                        id="logo2"></a>
             </div>
 
             <!-- ICONOS REDES SOCIALES -->
