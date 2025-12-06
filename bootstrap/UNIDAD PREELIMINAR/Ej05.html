@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion de texto</title>
+    <style>
+        .typing{
+            width: 0;
+            border-right: 2px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(30) forwards;
+        }
+
+        @keyframes typing{
+            from {width: 0;}
+            to{ width: 100%;}
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="typing">Este es un texto animado con efecto escritura</h1>
+</body>
+</html>
