@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(249, 215, 255);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  background-color: transparent;
+}
+
+footer {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link {
+  color: rgb(124, 70, 138);
+  transition: all 0.3s ease-out;
+}
+.nav-link:hover {
+  color: rgb(144, 0, 255);
+  transform: scale(1.2);
+}
+
+.inicio {
+  background-image: url("../img/AVheader.webp");
+  background-color: rgba(0, 0, 0, 0.355);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+}
+
+.titulo-inicio {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva";
+  text-shadow: 3px 3px 10px black;
+}
+
+.imagencabecera {
+  box-shadow: 0px 0px 15px 3px rgb(0, 0, 0);
+  border: none;
+  transition: transform 0.3s ease;
+}
+.imagencabecera:hover {
+  transform: scale(1.05);
+}
+
+.iconos-redes {
+  color: rgb(124, 70, 138);
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 25px;
+}
+.iconos-redes:hover {
+  color: rgb(236, 255, 142);
+}
+
+input {
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 250px;
+}
+
+.form-control:focus {
+  border-color: blueviolet;
+  box-shadow: 0px 0px 35px 3px blueviolet;
+  border: none;
+}
+
+.encontrarme {
+  color: rgb(255, 111, 0);
+}
+
+.btn {
+  background-color: transparent;
+  box-shadow: 0px 0px 15px 3px rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  color: rgb(124, 70, 138);
+}
+.btn:hover {
+  background-color: rgb(144, 0, 255);
+  color: rgb(249, 215, 255);
+}
+
+.carousel {
+  box-shadow: 0px 0px 15px 3px rgb(0, 0, 0);
+  border: none;
+  margin-bottom: 50px;
+}
+
+.carousel-item {
+  border-radius: 25px;
+  border: none;
+}
+
+.titulos {
+  color: rgb(124, 70, 138);
+  text-shadow: 3px 3px 10px black;
+}
+
+.texto {
+  color: rgb(124, 70, 138);
+}
+
+.contacto {
+  background-image: url("../img/catedral.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.iconohamburguesa {
+  color: rgb(124, 70, 138);
+  font-size: 1.8rem;
+}/*# sourceMappingURL=estilosalter.css.map */
