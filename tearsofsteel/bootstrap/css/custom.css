@@ -1,0 +1,341 @@
+/* Estilos personalizados para la plantilla Tears of Steel */
+
+/* HERO */
+.hero{
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+}
+
+/* NAV: efecto underline animado centrado */
+.navbar .nav-link{
+  position: relative;
+  transition: color .18s ease;
+}
+.navbar .nav-link::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 70%;
+  height: 3px;
+  background: #0d6efd; /* color primario */
+  transition: transform .28s cubic-bezier(.2,.9,.2,1);
+  border-radius: 2px;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after{
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* LIGHT lift on hover */
+.navbar .nav-link:hover{
+  color: #fff;
+}
+
+/* GALERÍA: pequeño efecto al pasar */
+.img-fluid{
+  transition: transform .35s ease, box-shadow .25s ease;
+}
+.img-fluid:hover{
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* PERSONAJES: overlay que aparece con transición desde abajo */
+.character-card{
+  position: relative;
+}
+.character-card img{
+  transition: transform .4s ease;
+}
+.character-card:hover img{
+  transform: scale(1.05) translateY(-6px);
+}
+.character-card .card-overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(180deg, rgba(13,110,253,0.88), rgba(13,110,253,0.96));
+  color: #fff;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform .36s cubic-bezier(.2,.9,.2,1), opacity .28s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+  opacity: 0;
+}
+.character-card:hover .card-overlay{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Responsivo: asegurar texto legible en pantallas pequeñas */
+@media (max-width:576px){
+  .hero{ padding-top: 3rem; padding-bottom: 3rem; }
+  .character-card .card-overlay{ padding: 0.75rem; }
+}
+
+/* Pequeños ajustes estéticos */
+body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+/* Fondo fijo para todas las páginas (usa img/fondo.png) */
+body{
+  /* Fondo global: degradado oscuro (opción 4) en lugar de imagen */
+  background: linear-gradient(180deg,#07060b,#0b1220);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Navbar semi-transparente y efecto blur */
+.navbar{
+  background-color: rgba(0,0,0,0.45) !important;
+  backdrop-filter: blur(6px);
+}
+.navbar .nav-link{
+  color: rgba(255,255,255,0.95);
+}
+.navbar .nav-link:hover{ color: #fff; }
+
+/* Estado scrolled: navbar más opaca cuando se hace scroll */
+/* NOTE: se eliminó el comportamiento .scrolled (no se usa script de scroll) */
+
+/* Fondo semitransparente para bloques de texto para garantizar legibilidad */
+.content-bg{
+  background: rgba(0,0,0,0.52);
+  padding: 1rem 1.25rem;
+  border-radius: .5rem;
+  color: #fff;
+}
+
+/* Tipografía y sombras para mejorar contraste sobre el fondo fijo */
+h1, h2, h3, .card-title{
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+p, li, .card-body, .lead{
+  color: #eef6ff; /* tono claro para mejor lectura */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+}
+
+/* Ajustes para cards de personajes: cuerpo oscuro + texto claro */
+.character-card .card-body{
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+}
+.character-card .card-body .small{ color: #d8e6ff; }
+
+/* Asegurar que el hero tenga base negra para consonancia */
+.hero{ background-color: #000; }
+
+/* Footer global: negro sólido y texto claro */
+.site-footer{
+  background-color: #000 !important;
+  color: #e6eef8;
+}
+.site-footer a{ color: #cfe6ff; text-decoration: underline; }
+
+/* Sinopsis: tarjeta centrada con box-shadow y texto centrado */
+.synopsis-card{
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #0b1220; /* fondo sólido, sin transparencia */
+  padding: 2rem 2.5rem;
+  border-radius: .6rem;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.8);
+  text-align: center;
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease;
+}
+
+@media (max-width: 576px){
+  .synopsis-card{ padding: 1rem; margin-left: .5rem; margin-right: .5rem; }
+}
+
+/* Hover: elevar la card y resaltar box-shadow */
+.synopsis-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 22px 60px rgba(2,6,23,0.95);
+}
+
+.synopsis-card p{ font-size: 1.125rem; line-height: 1.7; color: #f5f9ff; }
+
+/* ------------------ Tema Cyberpunk ------------------ */
+:root{
+  --bg-900: #07060b;
+  --panel-900: #0b1220;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2dca;
+  --neon-purple: #8b5cff;
+  --muted-blue: #a6d6ff;
+}
+
+/* Fuente específica aplicada via HTML (Orbitron) */
+body{ background-color: var(--bg-900); color: #eaf6ff; }
+
+/* Nav: oscuro con sutil glow y links neon */
+.navbar{
+  background: transparent !important;
+  border-bottom: 1px solid rgba(140,40,180,0.03);
+  transition: background-color .28s ease, backdrop-filter .28s ease, box-shadow .28s ease;
+}
+.navbar.scrolled{
+  background-color: rgba(11,18,32,0.66) !important;
+  backdrop-filter: blur(6px) saturate(1.05);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+.navbar .navbar-brand{ color: var(--neon-pink); font-family: 'Orbitron', sans-serif; text-shadow: 0 2px 14px rgba(255,45,202,0.18); }
+.navbar .nav-link{
+  color: rgba(230,245,255,0.85);
+  position: relative;
+  transition: color .18s ease;
+}
+.navbar .nav-link::after{
+  content: '';
+  position: absolute; left:50%; bottom:-6px; transform:translateX(-50%) scaleX(0);
+  width: 60%; height: 3px; border-radius:2px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  transition: transform .24s cubic-bezier(.2,.9,.2,1);
+}
+.navbar .nav-link:hover::after, .navbar .nav-link.active::after{ transform: translateX(-50%) scaleX(1); }
+.navbar .nav-link:hover{ color: var(--muted-blue); text-shadow: 0 2px 10px rgba(0,240,255,0.07); }
+
+/* Hero: efecto sutil de ruido con overlay neon */
+.hero{
+  /* Opción 3: degradado animado sutil en hero (sin imagen ni scanlines) */
+  background: linear-gradient(120deg,#06020a,#0a1230);
+  background-size: cover; background-position: center; min-height: 360px;
+  position: relative; overflow: hidden;
+}
+
+/* Fondo por página: capa fija que queda debajo de hero y del contenido */
+.page-bg{
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(1.05) contrast(1.03);
+  opacity: 0.94;
+}
+.page-bg--index{ background-image: url('../img/fondo.png'); }
+.page-bg--galeria{ background-image: url('../img/graded_edit_final_00001.png'); }
+.page-bg--personajes{ background-image: url('../img/graded_edit_final_00002.png'); }
+.page-bg--recomendaciones{ background-image: url('../img/graded_edit_final_00003.png'); }
+
+/* Make hero semi-transparent so page-bg is visible through it */
+.hero{
+  background: linear-gradient(120deg, rgba(0,0,0,0.35), rgba(4,6,20,0.3));
+}
+.hero::before{
+  content: '';
+  position: absolute; inset:0; background: linear-gradient(120deg, rgba(4,2,10,0.35), rgba(6,8,30,0.45));
+  mix-blend-mode: multiply; pointer-events: none;
+}
+.hero::after{
+  /* animated neon gradient band (subtle) */
+  content: '';
+  position: absolute; inset:0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,45,202,0.04), rgba(0,240,255,0.04), rgba(139,92,255,0.04));
+  background-size: 300% 100%;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  transition: opacity .3s ease;
+  animation: heroGradient 14s linear infinite;
+}
+
+@keyframes heroGradient{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero::after{ animation: none; }
+}
+.hero h1{ font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); text-shadow: 0 2px 18px rgba(0,240,255,0.12), 0 8px 40px rgba(139,92,255,0.04); }
+.hero .lead{ color: #cfeeff; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
+
+/* Botones: fondo neon con glow */
+.btn-primary{
+  background: linear-gradient(90deg,var(--neon-pink), var(--neon-cyan));
+  border: none; color: #061220; font-weight:600; box-shadow: 0 8px 30px rgba(139,92,255,0.12), 0 0 18px rgba(0,240,255,0.06) inset;
+}
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 16px 48px rgba(139,92,255,0.2); }
+
+/* Galería: bordes neon y hover */
+.img-fluid{ border-radius: 6px; border: 1px solid rgba(255,255,255,0.04); }
+.img-fluid:hover{ filter: saturate(1.05) brightness(1.03) contrast(1.02); transform: scale(1.02); }
+
+/* clickable images (open modal) */
+.clickable-img{ cursor: pointer; display: block; }
+
+/* Estilos para reproductores de audio integrados */
+.audio-player{
+  max-width: 820px;
+  margin: 1rem auto;
+  padding: .75rem 1rem;
+  background: rgba(3,6,18,0.45);
+  border-radius: .5rem;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.audio-player h6{ margin:0 0 .5rem 0; color: var(--muted-blue); }
+.audio-player p{ margin:0 0 .5rem 0; color: #cfe6ff; font-size: .95rem; }
+
+/* Cards personajes: overlay con neon subtle border */
+.character-card{ border-radius: .6rem; overflow: hidden; border: 1px solid rgba(140,40,180,0.06); }
+.character-card .card-overlay{ background: linear-gradient(180deg, rgba(14,2,18,0.9), rgba(20,12,40,0.94)); border-top: 1px solid rgba(139,92,255,0.06); }
+.character-card:hover{ transform: translateY(-6px); box-shadow: 0 18px 50px rgba(139,92,255,0.08); }
+
+/* Footer: neon thin top line + black background */
+.site-footer{ background: #000; border-top: 2px solid rgba(140,40,180,0.12); }
+.site-footer a{ color: var(--neon-cyan); text-shadow: 0 2px 12px rgba(0,240,255,0.06); }
+
+/* Small decorative animated gradient underline for headings */
+.glow-underline{ position: relative; display: inline-block; }
+.glow-underline::after{ content:''; position:absolute; left:0; right:0; bottom:-6px; height:6px; background: linear-gradient(90deg,var(--neon-pink),var(--neon-cyan)); filter: blur(10px); opacity:.55; transform-origin:left; transform: scaleX(.85); }
+
+/* Keep layout responsive (Bootstrap handles most). minor tweaks: */
+@media (max-width:768px){
+  .hero h1{ font-size: 2rem; }
+  .synopsis-card{ padding: 1.25rem; }
+}
+
+
+
+
+/* Ajuste para hero: usar overlay sobre el fondo fijo */
+.hero{
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+  min-height: 320px;
+}
+
+/* Hero YouTube background container */
+.hero-video-container{
+  position: absolute;
+  inset: 0;
+  z-index: -2; /* above page-bg (-3), below content */
+  overflow: hidden;
+}
+.hero-video-container .hero-player iframe{
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none; /* avoid clicks on iframe; use controls via button */
+  transform: scale(1.15); /* scale slightly to ensure cover */
+}
+.hero .btn-outline-light{
+  backdrop-filter: blur(4px);
+}
+
+/* Make hero taller so YouTube background covers the full banner area */
+.hero{ min-height: 60vh !important; }
+@media (max-width: 768px){
+  .hero{ min-height: 40vh !important; }
+  .hero-video-container .hero-player iframe{ transform: scale(1.05); }
+}

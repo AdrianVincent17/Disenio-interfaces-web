@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <title>Galería - Tears of Steel</title>
+</head>
+<body class="page--galeria">
+
+<div class="page-bg page-bg--galeria" aria-hidden="true"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Tears of Steel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="galeria.html#galeria">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="personajes.html#personajes">Personajes</a></li>
+        <li class="nav-item"><a class="nav-link" href="recomendaciones.html#recomendaciones">Recomendaciones</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="hero text-white d-flex align-items-center" role="banner">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="display-6 fw-bold">Galería</h1>
+        <p class="small text-muted">Imágenes y fotogramas del proyecto</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-5">
+  <div class="container">
+    <section id="galeria" class="content-bg">
+      <h1 class="mb-4">Galería</h1>
+      <div class="row g-3">
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-1">
+            <img src="img/graded_edit_final_00001.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 1">
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-2">
+            <img src="img/graded_edit_final_00002.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 2">
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-3">
+            <img src="img/graded_edit_final_00003.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 3">
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-4">
+            <img src="img/graded_edit_final_00004.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 4">
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-5">
+            <img src="img/graded_edit_final_00005.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 5">
+          </a>
+        </div>
+        <div class="col-6 col-md-4">
+          <a role="button" data-bs-toggle="modal" data-bs-target="#modal-gal-6">
+            <img src="img/graded_edit_final_00006.png" class="img-fluid rounded shadow-sm clickable-img" alt="frame 6">
+          </a>
+        </div>
+      </div>
+
+      <!-- Gallery modals -->
+      <div class="modals-gallery">
+        <!-- modal 1 -->
+        <div class="modal fade" id="modal-gal-1" tabindex="-1" aria-labelledby="modalGal1Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00001.png" class="img-fluid w-100" alt="frame 1">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal 2 -->
+        <div class="modal fade" id="modal-gal-2" tabindex="-1" aria-labelledby="modalGal2Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00002.png" class="img-fluid w-100" alt="frame 2">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal 3 -->
+        <div class="modal fade" id="modal-gal-3" tabindex="-1" aria-labelledby="modalGal3Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00003.png" class="img-fluid w-100" alt="frame 3">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal 4 -->
+        <div class="modal fade" id="modal-gal-4" tabindex="-1" aria-labelledby="modalGal4Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00004.png" class="img-fluid w-100" alt="frame 4">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal 5 -->
+        <div class="modal fade" id="modal-gal-5" tabindex="-1" aria-labelledby="modalGal5Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00005.png" class="img-fluid w-100" alt="frame 5">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal 6 -->
+        <div class="modal fade" id="modal-gal-6" tabindex="-1" aria-labelledby="modalGal6Label" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+              <div class="modal-body p-0">
+                <img src="img/graded_edit_final_00006.png" class="img-fluid w-100" alt="frame 6">
+              </div>
+              <div class="modal-footer border-0 bg-transparent">
+                <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer text-white py-4">
+  <div class="container text-center small">
+    &copy; 2025 Tears of Steel — <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0</a>
+  </div>
+</footer>
+
+<script src="js/navbar-scroll.js" defer></script>
+
+</body>
+</html>

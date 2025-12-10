@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+  <title>Personajes - Tears of Steel</title>
+</head>
+<body class="page--personajes">
+
+<div class="page-bg page-bg--personajes" aria-hidden="true"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Tears of Steel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html#galeria">Galería</a></li>
+        <li class="nav-item"><a class="nav-link active" href="personajes.html#personajes">Personajes</a></li>
+        <li class="nav-item"><a class="nav-link" href="recomendaciones.html#recomendaciones">Recomendaciones</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</nav>
+
+<header class="hero text-white d-flex align-items-center" role="banner">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="display-6 fw-bold">Personajes</h1>
+        <p class="small text-muted">Conoce a los protagonistas</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-5">
+  <div class="container">
+    <section id="personajes" class="content-bg">
+      <h1 class="mb-4">Personajes</h1>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card character-card overflow-hidden shadow-sm">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modal-char-1">
+              <img src="img/graded_edit_final_00001.png" class="card-img-top clickable-img" alt="Thom">
+            </a>
+            <div class="card-body p-3">
+              <h5 class="card-title mb-1">Thom</h5>
+              <p class="small text-muted mb-0">Científico</p>
+            </div>
+            <div class="card-overlay p-3">
+              <h5>Thom</h5>
+              <p class="mb-0">Joven científico que ayuda a montar el plan para detener la amenaza y salvar la ciudad.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card character-card overflow-hidden shadow-sm">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modal-char-2">
+              <img src="img/graded_edit_final_00002.png" class="card-img-top clickable-img" alt="Celia">
+            </a>
+            <div class="card-body p-3">
+              <h5 class="card-title mb-1">Celia</h5>
+              <p class="small text-muted mb-0">Compañera</p>
+            </div>
+            <div class="card-overlay p-3">
+              <h5>Celia</h5>
+              <p class="mb-0">Miembro clave del equipo cuya labor y decisiones influyen en el desarrollo emocional de la historia.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card character-card overflow-hidden shadow-sm">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modal-char-3">
+              <img src="img/graded_edit_final_00003.png" class="card-img-top clickable-img" alt="Barley">
+            </a>
+            <div class="card-body p-3">
+              <h5 class="card-title mb-1">Barley</h5>
+              <p class="small text-muted mb-0">Técnico</p>
+            </div>
+            <div class="card-overlay p-3">
+              <h5>Barley</h5>
+              <p class="mb-0">Proveedor de apoyo técnico y conocimientos prácticos esenciales durante la misión.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card character-card overflow-hidden shadow-sm">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#modal-char-4">
+              <img src="img/graded_edit_final_00004.png" class="card-img-top clickable-img" alt="Capitán">
+            </a>
+            <div class="card-body p-3">
+              <h5 class="card-title mb-1">Capitán</h5>
+              <p class="small text-muted mb-0">Líder</p>
+            </div>
+            <div class="card-overlay p-3">
+              <h5>Capitán</h5>
+              <p class="mb-0">Figura de autoridad que coordina la logística y las decisiones críticas en la operación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer text-white py-4">
+  <div class="container text-center small">
+    &copy; 2025 Tears of Steel — <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0</a>
+  </div>
+</footer>
+
+<!-- Character modals -->
+<div class="modals-characters">
+  <div class="modal fade" id="modal-char-1" tabindex="-1" aria-labelledby="modalChar1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-body p-0">
+          <img src="img/graded_edit_final_00001.png" class="img-fluid w-100" alt="Thom">
+        </div>
+        <div class="modal-footer">
+          <div class="me-auto">
+            <h5 class="mb-0">Thom</h5>
+            <small class="text-muted">Científico — Joven científico que ayuda a montar el plan para detener la amenaza.</small>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-char-2" tabindex="-1" aria-labelledby="modalChar2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-body p-0">
+          <img src="img/graded_edit_final_00002.png" class="img-fluid w-100" alt="Celia">
+        </div>
+        <div class="modal-footer">
+          <div class="me-auto">
+            <h5 class="mb-0">Celia</h5>
+            <small class="text-muted">Compañera — Miembro clave cuya labor y decisiones influyen en lo emocional de la historia.</small>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-char-3" tabindex="-1" aria-labelledby="modalChar3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-body p-0">
+          <img src="img/graded_edit_final_00003.png" class="img-fluid w-100" alt="Barley">
+        </div>
+        <div class="modal-footer">
+          <div class="me-auto">
+            <h5 class="mb-0">Barley</h5>
+            <small class="text-muted">Técnico — Proveedor de apoyo técnico y conocimientos prácticos esenciales.</small>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-char-4" tabindex="-1" aria-labelledby="modalChar4Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-body p-0">
+          <img src="img/graded_edit_final_00004.png" class="img-fluid w-100" alt="Capitán">
+        </div>
+        <div class="modal-footer">
+          <div class="me-auto">
+            <h5 class="mb-0">Capitán</h5>
+            <small class="text-muted">Líder — Figura de autoridad que coordina logística y decisiones críticas.</small>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
