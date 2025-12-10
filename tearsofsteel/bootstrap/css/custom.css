@@ -339,3 +339,36 @@ body{ background-color: var(--bg-900); color: #eaf6ff; }
   .hero{ min-height: 40vh !important; }
   .hero-video-container .hero-player iframe{ transform: scale(1.05); }
 }
+
+/* 1. Aseguramos que el contenedor del video se posicione 
+   detrás del contenido y ocupe todo el espacio disponible */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita que si el video es más grande, genere scroll */
+    z-index: 0; /* Se queda al fondo */
+}
+
+/* 2. Estiramos el reproductor (el iframe de YouTube o video) */
+#hero-player, 
+.hero-player iframe {
+    width: 3500px; /* Ancho muy grande para cubrir todo */
+    height: 100%;
+    /* border: 0; Elimina bordes del iframe si los hubiera */
+    
+    /* TRUCO: Para intentar simular "object-fit: cover" en iframes 
+       y evitar barras negras, a veces se usa una escala mayor. 
+       Si el video se ve bien sin esto, puedes omitir la siguiente línea: */
+    /* transform: scale(1.2); */ 
+    pointer-events: none; /* Evita que el usuario pulse pausa/play en el video de fondo */
+}
+
+/* 3. Ajuste opcional para el Header padre si quieres una altura mínima */
+.hero {
+    /* El HTML ya tiene position-relative, pero aseguramos overflow hidden */
+    overflow: hidden;
+    min-height: 60vh; /* Opcional: Altura mínima del banner (60% del alto de pantalla) */
+}
